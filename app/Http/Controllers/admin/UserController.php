@@ -144,5 +144,11 @@ class UserController extends Controller
             toastError('Something went wrong, try again');
             return Redirect::back();
         }
+    }  
+
+    public function quiz_result()
+    {
+        $quiz_results = Result::get();
+        return view('admin.quiz.quiz_result',compact('quiz_results'));
     }
 }
