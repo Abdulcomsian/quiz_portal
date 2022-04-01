@@ -29,6 +29,11 @@
 									<li><a class="{{ Request::is('admin/quiz/create') ? 'active' : '' }}" href="{{ url('admin/quiz/create') }}"> Add Question </a></li>
 								</ul>
 							</li>
+
+							<li class="{{ Request::is('admin/quiz_result') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/quiz_result') }}"><span>Quiz Result</span></a>
+							</li>
+
 							@endif
 							@if(Auth::user()->hasRole('User'))
 							<li class="menu-title"> 

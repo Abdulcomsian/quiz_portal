@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Result;
+use App\Models\Quiz;
 use Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
@@ -149,6 +151,7 @@ class UserController extends Controller
     public function quiz_result()
     {
         $quiz_results = Result::get();
-        return view('admin.quiz.quiz_result',compact('quiz_results'));
+        $questions = Quiz::get();
+        return view('admin.quiz.quiz_result',compact('quiz_results','questions'));
     }
 }

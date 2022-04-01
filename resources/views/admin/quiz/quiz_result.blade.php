@@ -23,6 +23,7 @@
 											<thead>
 												<tr>
 													<th>User Name</th>
+													<th>User Email</th>
 													<th>Obtained Marks</th>
 													<th>Total Marks</th>
 													<th>Action</th>
@@ -31,21 +32,18 @@
 											<tbody>
 												<tr>
 													@foreach($quiz_results as $result)
-													<td>{{$quiz->question}}</td>
-													<td>{{$quiz->option_1}}</td>
-													<td>{{$quiz->option_2}}</td>
-													<td>{{$quiz->option_3}}</td>
-													<td>{{$quiz->option_4}}</td>
-													<td>{{$quiz->answer}}</td>
+													<td>{{$result->user->name}}</td>
+													<td>{{$result->user->email}}</td>
+													<td>{{$result->result}}</td>
+													<td>{{count($questions)}}</td>
 													<td>
 														<div class="actions" style="display:flex;">
 															
-															<a href="{{route('quiz.edit',$quiz->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-success-light edit-quiz"><i class="fe fe-pencil"></i> Edit</a>
-															<form method="POST" action="{{ route('quiz.destroy', $quiz->id) }}"  id="form_{{$quiz->id}}" >
+															<form method="POST" action="{{ route('quiz.destroy', $result->id) }}"  id="form_{{$result->id}}" >
 							                                    @method('Delete')
 							                                    @csrf()
 
-							                                    <button type="submit" id="{{$quiz->id}}" class="confirm btn btn-sm bg-danger-light btn-active-color-primary btn-sm">
+							                                    <button type="submit" id="{{$result->id}}" class="confirm btn btn-sm bg-danger-light btn-active-color-primary btn-sm">
 							                                        <!--begin::Svg Icon | path: icons/duotone/General/Trash.svg-->
 							                                     <i class="fe fe-trash"></i> Delete
 							                                        <!--end::Svg Icon-->
