@@ -40,9 +40,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="login">Login</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link header-login" href="register">Register</a>
-						</li>
+						</li> -->
 						@endif
 						@if(!Route::is(['pagee','mentor-register','mentee-register']))
 						<li class="nav-item dropdown has-arrow logged-item">
@@ -57,7 +57,15 @@
 										<img src="{{asset('assets/img/user/user.jpg') }}" alt="User Image" class="avatar-img rounded-circle">
 									</div>
 									<div class="user-text">
-								<a class="dropdown-item" href="login">Logout</a>
+								<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 							</div>
 						</li>
 						<!-- /User Menu -->
