@@ -31,9 +31,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 /*****************ADMIN ROUTES*******************/
 Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\user\dashboardController::class, 'index'])->name('user.dashboard');
-    Route::get('/quiz', [App\Http\Controllers\QuizController::class, 'index'])->name('quiz');
-    Route::post('/test', [App\Http\Controllers\QuizController::class, 'store_quiz'])->name('test.store');
-    Route::get('/q_result', [App\Http\Controllers\QuizController::class, 'q_result']);
+    Route::get('/quiz', [App\Http\Controllers\quizController::class, 'index'])->name('quiz');
+    Route::post('/test', [App\Http\Controllers\quizController::class, 'store_quiz'])->name('test.store');
+    Route::get('/q_result', [App\Http\Controllers\quizController::class, 'q_result']);
 });
 
 
