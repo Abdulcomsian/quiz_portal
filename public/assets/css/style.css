@@ -1190,6 +1190,18 @@ button.bg-danger:hover {
 	border-radius: 0;
 	margin-bottom: 0;
 }
+
+body
+{
+  background-image: url(../img/10-104644_m.jpeg);
+  background-color: #655d387d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  z-index: 99999999999;
+
+}
 .nav-tabs.nav-justified > li > a:hover,
 .nav-tabs.nav-justified > li > a:focus {
 	border-bottom-color: #ddd;

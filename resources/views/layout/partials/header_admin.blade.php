@@ -6,11 +6,11 @@
 		
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="index_admin" class="logo">
-					<img src="../assets_admin/img/logo.png" alt="Logo">
+				<a href="/" class="navbar-brand logo">
+					<img src="../assets/img/leftLogo.png" alt="Logo">
 				</a>
-				<a href="index_admin" class="logo logo-small">
-					<img src="../assets_admin/img/logo-small.png" alt="Logo" width="30" height="30">
+				<a href="/" class="logo logo-small">
+					<img src="../assets/img/leftLogo.png" alt="Logo" width="30" height="30">
 				</a>
 			</div>
 			<!-- /Logo -->

@@ -579,6 +579,19 @@ button.bg-danger:hover {
     border-color: #3dd598;
     color: #fff;
 }
+
+body
+{
+  background-image: url(../img/10-104644_m.jpeg);
+  background-color: #655d387d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  z-index: 99999999999;
+
+}
+
 .btn-info {
 	background-color: #009efb;
 	border: 1px solid #009efb
