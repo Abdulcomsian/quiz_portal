@@ -22,13 +22,13 @@
 							</span>
 						</a>
 						<a href="index" class="navbar-brand logo">
-							<img src="{{asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
+							<img src="{{asset('assets/img/leftLogo.png') }}" class="img-fluid" style="height: 44px !important;" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index" class="menu-logo">
-								<img src="{{asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
+								<img src="{{asset('assets/img/leftLogo.png') }}" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>

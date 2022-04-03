@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">
+                   <a href="/"><img src="../assets/img/leftLogo.png" alt="" class="img-fluid" style="height: 44px !important;"></a>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

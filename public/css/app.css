@@ -626,6 +626,18 @@ pre code {
   margin-left: -15px;
 }
 
+body
+{
+  background-image: url(../assets/img/10-104644_m.jpeg);
+  background-color: #655d387d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  z-index: 99999999999;
+
+}
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
