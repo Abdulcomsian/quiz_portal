@@ -6,11 +6,11 @@
 		
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="/" class="navbar-brand logo">
-					<img src="../assets/img/leftLogo.png" alt="Logo">
+				<a href="index_admin" class="logo">
+					<img src="../assets_admin/img/logo.png" alt="Logo">
 				</a>
-				<a href="/" class="logo logo-small">
-					<img src="../assets/img/leftLogo.png" alt="Logo" width="30" height="30">
+				<a href="index_admin" class="logo logo-small">
+					<img src="../assets_admin/img/logo-small.png" alt="Logo" width="30" height="30">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -49,7 +49,15 @@
 							</div>
 						</div>
 						<a class="dropdown-item" href="profile">My Profile</a>
-						<a class="dropdown-item" href="login">Logout</a>
+						<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 					</div>
 				</li>
 				<!-- /User Menu -->
