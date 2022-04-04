@@ -7,8 +7,8 @@
 							<li class="menu-title"> 
 								<span><i class="fe fe-home"></i> Main</span>
 							</li>
-							<li class="{{ Request::is('admin/index_admin') ? 'active' : '' }}"> 
-								<a href="index_admin"><span>Dashboard</span></a>
+							<li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/dashboard') }}"><span>Dashboard</span></a>
 							</li>
 							
 							<li class="menu-title"> 
@@ -29,11 +29,6 @@
 									<li><a class="{{ Request::is('admin/quiz/create') ? 'active' : '' }}" href="{{ url('admin/quiz/create') }}"> Add Question </a></li>
 								</ul>
 							</li>
-
-							<li class="{{ Request::is('admin/quiz_result') ? 'active' : '' }}"> 
-								<a href="{{ url('admin/quiz_result') }}"><span>Quiz Result</span></a>
-							</li>
-
 							@endif
 							@if(Auth::user()->hasRole('User'))
 							<li class="menu-title"> 
