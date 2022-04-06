@@ -17,29 +17,13 @@ class quizController extends Controller
         // $quizzes = Quiz::inRandomOrder()->get(); 
         $user_id = Auth::id();
         $quizzes = Quiz::get(); 
-        return view('quiz.index', compact('quizzes'));
+        return view('quiz.index_1', compact('quizzes'));
         
     } 
 
     public function store_quiz(Request $request)
     {
         $user_id = Auth::id();
-          // dd($request->all());
-
-        // $answers = array()
-        $this->validate($request,[ 
-            'option_1'=>'required', 
-            'option_2'=>'required', 
-            'option_3'=>'required', 
-            'option_4'=>'required', 
-            'option_5'=>'required', 
-            'option_6'=>'required', 
-            'option_7'=>'required', 
-            'option_8'=>'required', 
-            'option_9'=>'required', 
-            'option_10'=>'required', 
-        ]);
-
         $questions = [];
         $answers = [];
         $c_answers = [];

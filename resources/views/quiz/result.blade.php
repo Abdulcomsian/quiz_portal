@@ -21,9 +21,13 @@
 
 									<!-- Add details -->
 									<div class="row">
-										<div class="col-12 blog-details">
-											<p>You Got <strong>{{$results}}</strong> out of <strong>{{ $total_question }}</strong></p>
-										</div>
+                                        <div class="quizFinish">
+                                            <div class="col-12 text-center">
+                                                    <img src="../../assets/img/tickIcon.png" alt="" class="img-fluid">
+                                                    <h2>Your Quiz has Finished !</h2>
+                                                    <p>Your total Score is {{$results}} out of {{ $total_question }}.</p>
+                                                </div>
+                                            </div>
 									</div>
 									<!-- /Add details -->
 
