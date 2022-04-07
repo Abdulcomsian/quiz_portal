@@ -21,12 +21,41 @@
 
 									<!-- Add details -->
 									<div class="row">
-										@foreach($results as $result)
-										<div class="col-12 blog-details">
-											<p>You Got <strong>{{$result->result}}</strong> Marks</p>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Quiz #</th>
+                                                    <th>Total Questions</th>
+                                                    <th>Correct Answers</th>
+                                                    <th>Obtain Marks</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($results as $result)
+                                                <tr>
+                                                    <td>{{$loop->index+1}}</td>
+                                                    <td>{{count($result->questions)}}</td>
+                                                    <td>{{$result->result}}</td>
+                                                    <td>{{$result->result}}</td>
+                                                    <td><a href="{{route('quiz.review',$result->id)}}"><i class="fa fa-eye"></i></a></td>
+                                                </tr>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+
+                                        <!-- result in div form old -->
+										<!-- @foreach($results as $result)
+										 <div class="col-12 blog-details">
+											<p>You Got <strong>{{$result->result}}</strong> Marks Out of <strong>{{count($result->questions)}}</strong></p>
 										</div>
-										@endforeach
+										@endforeach -->
 									</div>
+                                    <br>
+                                    <div class="col-md-6 d-flex" style="margin-bottom:10px">
+                                        {{$results->links("pagination::bootstrap-4")}}
+                                    </div>
 									<!-- /Add details -->
 
 								</div>

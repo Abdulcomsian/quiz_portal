@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+
 Auth::routes();
 
 /*****************ADMIN ROUTES*******************/
@@ -34,8 +38,9 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/quiz', [App\Http\Controllers\quizController::class, 'index'])->name('quiz');
     Route::post('/test', [App\Http\Controllers\quizController::class, 'store_quiz'])->name('test.store');
     Route::get('/q_result', [App\Http\Controllers\quizController::class, 'q_result']);
+    Route::get('/q_review/{id}', [App\Http\Controllers\quizController::class, 'q_review'])->name('quiz.review');
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

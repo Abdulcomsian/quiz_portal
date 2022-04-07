@@ -23,7 +23,7 @@
 									<div class="row">
                                         <div class="quizFinish">
                                             <div class="col-12 text-center">
-                                                    <img src="../../assets/img/tickIcon.png" alt="" class="img-fluid">
+                                                    <img src="{{asset('assets/img/tick-icon.svg')}}" alt="" class="img-fluid">
                                                     <h2>Your Quiz has Finished !</h2>
                                                     <p>Your total Score is {{$results}} out of {{ $total_question }}.</p>
                                                 </div>

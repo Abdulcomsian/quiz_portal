@@ -1,23 +1,15 @@
-<html>
-<title>Home</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../assets/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
+@extends('layout.mainlayout')
+@section('content')   
+  <style type="text/css">
+    #contentDiv{
+        height: 70vh
+    }
+  </style>
   <section id="banner">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <img src="../../assets/img/leftLogo.png" alt="" class="img-fluid">
+                <img src="{{asset('assets/img/leftLogo.png')}}" alt="" class="img-fluid">
             </div>
             <div class="col-md-8">
                 <div class="bannerDiv">
@@ -31,7 +23,7 @@
             </div>
         </div>
     </div>
-</section>
+  </section>
 
 <section id="contentDiv" class="selectionScreenContent assessmentContent">
   <div class="overlay"></div>
@@ -48,7 +40,7 @@
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="timerDiv">
-                        <span>09 : 55</span>
+                        <span class="countdown">09:55</span>
                         <p>TIME LEFT</p>
                     </div>
                     
@@ -66,31 +58,32 @@
                         <span class="text-danger error" style="margin-left:17px"></span>
                         @foreach($quizzes as $key=>$quiz)
                          <input type="hidden" name="question[]" value="{{$quiz->id}}">
+                         <input type="hidden" name="questions[]" value="{{$quiz->question}}">
                         <div class="form-group @if(!$loop->first) d-none @endif quiz{{$quiz->id}}">
-                          <label class="col-lg-12 control-label commonLabel" for="uname">{{ $quiz->question }}</label>
+                          <label class="col-lg-12 control-label commonLabel" for="uname"><b>({{$loop->index+1}})</b>  {{ $quiz->question }}</label>
                           <div class="col-lg-12">
                             <div class="commonDiv">
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$key+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}" required>
+                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}">
                                         <label class="form-check-label" for="{{$quiz->option_1}}">
                                            {{$quiz->option_1}} 
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$key+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
                                         <label class="form-check-label" for="option_2">
                                             {{$quiz->option_2}}
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$key+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
                                         <label class="form-check-label" for="option_3">
                                             {{$quiz->option_3}}
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$key+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
                                         <label class="form-check-label" for="option_4">
                                             {{$quiz->option_4}}
                                         </label>
@@ -115,39 +108,21 @@
                               </div>
                             </div>
                         </div>
-                        
                         @endforeach
-                        
-
                     </fieldset>
                 </div>
 
             </form>
         </div>
-        <!-- <div class="quizFinish">
-            <div class="col-12 text-center">
-                <img src="../../assets/img/tickIcon.png" alt="" class="img-fluid">
-                <h2>Your Quiz has Finished !</h2>
-                <p>Your total Score is 50 out of 100.</p>
-            </div>
-        </div> -->
     </div>
 </section>
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
+@endsection
+@section('script')
 <script type="text/javascript">
 
     $(".next").on('click',function(){
         var quizid=$(this).attr('data-order');
-        if($('#option_'+quizid).prop("checked"))
+        if(  $("input[name='option_"+quizid+"']").is(":checked"))
         {
              $('.quiz'+quizid).addClass('d-none');
              var nextquizid=parseInt(quizid)+(1);
@@ -157,19 +132,31 @@
         }
         else{
              $(".error").html("Please Select Answer");   
+             return false;
         }
     })
 
     $(".clearBtn").click(function(){
          var quizid=$(this).attr('data-order');
-         $('#option_'+quizid).prop('checked', false);
+         $("input[name='option_"+quizid+"']").prop('checked', false);
+         //$('#option_'+quizid).prop('checked', false);
     })
-    
-    // $(".finishBtn").click(function(){
-    //     $(".formDiv").css("display", "none");
-    //     $(".quizFinish").css("display", "flex");
-    //     $(".topTimerDiv").css("display", "none");
-    //     $(".backBtnDiv").css("display", "block");
-    // })
-    </script>
-</html>
+
+      var timer2 = "09:55";
+      var interval = setInterval(function() {
+          var timer = timer2.split(':');
+          var minutes = parseInt(timer[0], 10);
+          var seconds = parseInt(timer[1], 10);
+          --seconds;
+          minutes = (seconds < 0) ? --minutes : minutes;
+          if (minutes < 0){
+            $("#basicform").submit();
+            return false;
+          }
+          seconds = (seconds < 0) ? 59 : seconds;
+          seconds = (seconds < 10) ? '0' + seconds : seconds;
+          $('.countdown').html(minutes + ':' + seconds);
+          timer2 = minutes + ':' + seconds;
+        }, 1000);
+</script>
+@endsection

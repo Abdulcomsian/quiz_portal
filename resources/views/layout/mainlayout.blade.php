@@ -16,12 +16,13 @@
   <body class="call-page">
   @endif
   @if(!Route::is(['login','register','forgot-password']))
-@include('layout.partials.header')
-@endif
-@yield('content')
-@if(!Route::is(['chat','chat-mentee','voice-call','video-call','login','register','forgot-password']))
-@include('layout.partials.footer')
-@endif
-@include('layout.partials.footer-scripts')
+  @include('layout.partials.header')
+  @endif
+  @yield('content')
+  @if(!Route::is(['chat','chat-mentee','voice-call','video-call','login','register','forgot-password']))
+  @include('layout.partials.footer')
+  @endif
+  @include('layout.partials.footer-scripts')
+  @yield('script')
   </body>
 </html>
