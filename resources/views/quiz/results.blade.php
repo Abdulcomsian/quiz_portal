@@ -44,7 +44,6 @@
 
                                             </tbody>
                                         </table>
-
                                         <!-- result in div form old -->
 										<!-- @foreach($results as $result)
 										 <div class="col-12 blog-details">
@@ -56,8 +55,6 @@
                                     <div class="col-md-6 d-flex" style="margin-bottom:10px">
                                         {{$results->links("pagination::bootstrap-4")}}
                                     </div>
-									<!-- /Add details -->
-
 								</div>
 							</div>
 						</div>			
