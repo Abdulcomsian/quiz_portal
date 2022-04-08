@@ -7,10 +7,10 @@
 			<!-- Logo -->
 			<div class="header-left">
 				<a href="/" class="logo">
-					<img src="{{asset('assets_admin/img/logo.png')}}" alt="Logo">
+					<img src="http://127.0.0.1:8000/assets/img/leftLogo.png" class="img-fluid" style="height: 44px !important;" alt="Logo">
 				</a>
-				<a href="index_admin" class="logo logo-small">
-					<img src="{{('assets_admin/img/logo-small.png')}}" alt="Logo" width="30" height="30">
+				<a href="/" class="logo logo-small">
+					<img src="http://127.0.0.1:8000/assets/img/leftLogo.png" class="img-fluid" style="height: 44px !important;" alt="Logo">
 				</a>
 			</div>
 			<!-- /Logo -->
