@@ -36,19 +36,20 @@
 						</div>		 
 					</div>		 
 					<ul class="nav header-navbar-rht">
-					@if(Route::is(['pagee','mentor-register','mentee-register']))
-						<li class="nav-item">
+					<!-- @if(Route::is(['pagee','mentor-register','mentee-register'])) -->
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="login">Login</a>
-						</li>
+						</li> -->
 						<!-- <li class="nav-item">
 							<a class="nav-link header-login" href="register">Register</a>
 						</li> -->
-						@endif
-						@if(!Route::is(['pagee','mentor-register','mentee-register']))
+						<!-- @endif -->
+						<!-- @if(!Route::is(['pagee','mentor-register','mentee-register'])) -->
+                        @auth
 						<li class="nav-item dropdown has-arrow logged-item">
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 								<span class="user-img">
-									<img class="rounded-circle" src="{{asset('assets/img/user/user.jpg') }}" width="31" alt="Darren Elder">
+									<img class="rounded-circle" src="{{asset('assets/img/user/user.jpg')}}" width="31" alt="Darren Elder">
 								</span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right">
@@ -56,20 +57,31 @@
 									<div class="avatar avatar-sm">
 										<img src="{{asset('assets/img/user/user.jpg') }}" alt="User Image" class="avatar-img rounded-circle">
 									</div>
-									<div class="user-text">
-								<a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+    								<div class="user-text">
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-							</div>
+    								    <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                        <a class="dropdown-item" href="{{ route('user.dashboard') }}">User Dashboard</a>
+    							     </div>
+
+                                 </div>
+
 						</li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                        @endif
 						<!-- /User Menu -->
-						@endif
+                        @endif
+						
 					</ul>
 					
 				</nav>

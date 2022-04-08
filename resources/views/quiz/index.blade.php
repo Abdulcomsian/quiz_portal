@@ -32,7 +32,7 @@
                                 
                                                 
                                             @foreach($quizzes as $key=>$quiz)
-                                                <div class="card @if(!$loop->last)mb-3 @endif" style="border: 1px solid transparent;">
+                                                <div class="card @if(!$loop->last)mb-3 @endif @if(!$loop->first) d-none @endif question{{$loop->index+1}}" style="border: 1px solid transparent;">
                                                     <strong>Question {{$key + 1 }} : </strong>
                                                     <div class="card-header">{{ $quiz->question }}</div>
                                                     <input type="hidden" name="question[]" value="{{$quiz->id}}">
@@ -63,11 +63,14 @@
                                                             </div>
                                                             <!-- <div style="color:red;">{{$errors->first('option_$key')}}</div> 
                                                             <br> -->
-
+                                                             <br>
+                                                             <button>Next</button>
+                                                             <button>Finish</button>
                                                         </div>
-                                                   
+
+                                                </div>
                                             @endforeach
-                                                            </div>
+                                                           
                                                        
                                             <div class="m-t-20 text-center">
                                                 <button type="submit" class="btn btn-primary btn-md">

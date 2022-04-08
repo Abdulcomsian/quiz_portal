@@ -1,0 +1,1460 @@
+html {
+    scroll-behavior: smooth;
+  }
+p,h1,h2,h3,h4,h5,h6,body,a,li,ul,span{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    list-style: none;
+}
+.container-fluid{
+    max-width: 1200px;
+}
+a,a:hover{
+    text-decoration: none;
+}
+@font-face {
+    font-family: RobotoRegular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: RobotoBold;
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+@font-face {
+    font-family: TalarArabic;
+    src: url("../fonts/talat_regular.ttf");
+}
+.slick-next:before{
+    content: "\f054" !important;
+    font-family: 'FontAwesome' !important;
+}
+.slick-prev:before{
+    content: "\f053" !important;
+    font-family: 'FontAwesome' !important;
+}
+body{
+    font-family: 'Arial', sans-serif;
+}
+/******** Index - CSS **********/
+#banner{
+    background: #201e1f;
+    padding: 20px;
+}
+#banner img{
+    width: 120px;
+}
+#banner .bannerDiv{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#banner .bannerDiv h2{
+    font-family: 'Fredoka', sans-serif;
+font-family: 'Fredoka One', cursive;
+color: #fcd428;
+font-size: 38px;
+}
+#banner .bannerDiv p{
+    color: #fff;
+    font-size: 24px;
+}
+.terjuma{
+    color: #b33337 !important;
+    text-align: center;
+}
+#header{
+    background-color: #000;
+}
+#header .navbar{
+    padding: 0px;
+}
+#header button{
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+#header button span i{
+    color: #fff;
+}
+#header .navbar-nav li a{
+    color: #fff;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+#header .navbar-nav li.active a{
+    background-color: #fcd428;
+}
+#contentDiv{
+    padding: 20px 0px;
+    background-color: #655d387d;
+    background-image: url("../images/banner/10-104644_m.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: bottom;
+    position: relative;
+    z-index: 99999999999;
+}
+#contentDiv ul li{
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #c39a3a;
+}
+#contentDiv ul li a{
+    color: #fff;
+    padding: 12px 20px;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+    
+#contentDiv ul li.active a:before{
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: 0;
+    border-left: 5px solid #fef2e2;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+#contentDiv ul li.active a:after{
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: 0;
+    border-right: 5px solid #fef2e2;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+#contentDiv ul li.active a{
+    border-left: 4px solid #fef2e2;
+    border-right: 4px solid #fef2e2;
+    box-shadow: 0 0 5px #ddd;
+    
+}
+#contentDiv ul li .submenu{
+    position: absolute;
+    height: auto;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    z-index: 1000;
+    left: 280px;
+    top: 0px;
+    border-left: 4px solid #fef2e2;
+}
+#contentDiv ul li .submenu li{
+    margin-bottom: 0px;
+}
+#contentDiv ul li:hover .submenu{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    /* top: 100px; */
+    left: 270px;
+}
+#contentDiv ul li:hover .submenu li a{
+    border-bottom: 1px solid #EEE;
+}
+#contentDiv ul li .submenu:before{
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -9px;
+    border-right: 5px solid #fef2e2;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+}
+#contentDiv .contentSlider{
+    box-shadow: 0px 0px 10px 0px rgb(60 168 39);
+    border-radius: 10px;
+}
+#contentDiv .contentSlider .sliderImg{
+    height: auto;
+}
+#contentDiv .contentSlider .sliderImg img{
+    border-radius: 10px;
+}
+#contentDiv .contentSlider .slick-next{
+    right: 10px;
+    opacity: .3;
+}
+#contentDiv .contentSlider .slick-prev{
+    left: 10px;
+    z-index: 99999;
+    opacity: .3;
+}
+#contentDiv .contentSlider .slick-prev:hover,
+#contentDiv .contentSlider .slick-next:hover{
+    opacity: 1;
+}
+#contentDiv .logosDiv img,
+#contentDiv .multiLogos img{
+    border-radius: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 25px -6px rgb(89 217 174);
+}
+#contentDiv .logosDiv{
+    width: 100%;
+    max-width: 80%;
+    margin: 20px auto;
+}
+#contentDiv .multiLogos{
+    display: flex;
+}
+#contentDiv .multiLogos a{
+    text-align: center;
+}
+#contentDiv .multiLogos img{
+    width: 90%;
+}
+#contentDiv .rightDiv li.active a::before,
+#contentDiv .rightDiv li.active a::after{
+    content: none;
+}
+#contentDiv .rightDiv li.active a{
+    border: none !important;
+}
+#contentDiv .rightDiv li .submenu{
+    right: 280px;
+    left: initial;
+    border-left: initial;
+    border-right: 4px solid #fff;
+}
+#contentDiv .rightDiv li .submenu::before{
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -9px;
+    border-left: 5px solid #fef2e2;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    left: initial;
+    border-right: initial;
+}
+#contentDiv .rightDiv li:hover .submenu{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    /* top: 100px; */
+    right: 270px;
+    left: initial;
+}
+#contentDiv .rightDiv .govrnerImgBox .pmDiv{
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+#contentDiv .rightDiv .govrnerImgBox a{
+    margin: 0px 10px;
+}
+#contentDiv .rightDiv .govrnerImgBox a p{
+    font-size: 12px;
+    color: #fff;
+}
+#contentDiv .rightDiv .govrnerImgBox{
+    padding: 20px;
+    background-color: #c39a3a6e;
+    text-align: center;
+    border-radius: 4px;
+}
+#contentDiv .rightDiv .govrnerImgBox .pmDiv a img{
+    height: 80px;
+}
+/********** Army - Portal - CSS **************/
+#breadCrum{
+    background-color: #b23537;
+    padding: 10px 0px;
+}
+#breadCrum a span{
+    font-size: 12px;
+}
+#breadCrum a span{
+    color: #fcd428;
+}
+#breadCrum a span:last-child{
+    color: #fff;
+}
+.armyPortalContent{
+    background-color: #9a9f79 !important;
+    background-image: none !important;
+    height: 550px;
+}
+.armyPortalContent .logoDiv a img{
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+.armyPortalContent .armyChiefDiv{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 5px;
+}
+.armyPortalContent .armyChiefDiv p{
+    background: #3a401e;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0px 3px;
+    font-size: 14px;
+}
+.armyPortalContent .tabDiv{
+    padding: 30px;
+}
+.armyPortalContent .tabDiv ul li{
+    flex-grow: 1;
+}
+.armyPortalContent .tabDiv ul{
+    border: none !important;
+    border-bottom: 1px solid #fff !important;
+}
+.armyPortalContent .tabDiv ul li .nav-link.active{
+    background-color: #000 !important;
+    border-radius: 5px;
+}
+.armyPortalContent .tabDiv ul li{
+    background-color: transparent !important;
+    box-shadow: none !important;
+   margin: 0px !important;
+}
+.armyPortalContent .tabDiv ul li a{
+    border: none !important;
+}
+.armyPortalContent .tabDiv ul li a::after,
+.armyPortalContent .tabDiv ul li a::before{
+    content: none !important;
+}
+.armyPortalContent .contentDiv{
+    padding: 0px 30px 30px;
+    height: 400px;
+    overflow: scroll;
+}
+.armyPortalContent .contentDiv .tab-pane.active{
+    opacity: 1;
+}
+.armyPortalContent .contentDiv .tab-pane .detailDiv{
+    height: 190px;
+    overflow: scroll;
+}
+.armyPortalContent .contentDiv .videoDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.armyPortalContent .contentDiv .videoDiv video{
+    width: 32%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.armyPortalContent .contentDiv .tab-pane .detailDiv p{
+    color: #fff;
+    font-size: 14px;
+    font-family: RobotoRegular;
+}
+.armyPortalContent .contentDiv .tab-pane img{
+    width: 100%;
+}
+.armyPortalContent .rightDiv{
+    padding: 30px 0px;
+}
+.armyPortalContent .rightDiv h2{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background: #3a401e;
+    padding: 5px;
+    border-radius: 5px;
+}
+.armyPortalContent .rightDiv a img{
+    height: 74px;
+    margin: 6px 0px 0px;
+    min-width: 61px;
+}
+.armyPortalContent .rightDiv .logoCommands .logoDiv{
+    width: 32%;
+    margin: 0px 1px;
+}
+.armyPortalContent .rightDiv .logoCommands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.armyPortalContent .rightDiv .logoCommands .logoDiv{
+    text-align: center;
+}
+.armyPortalContent .rightDiv .logoCommands .logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+/********** Resource - Portal - CSS **************/
+.resourceContent .pdfLink{
+    height: 370px;
+    overflow: scroll;
+    background: #fff;
+    padding: 10px 0 25px;
+}
+.resourceContent .pdfLink ul li{
+    background-color: transparent !important;
+    text-align: left !important;
+    margin-left: 20px;
+    margin-bottom: 0px !important;
+}
+.resourceContent .pdfLink ul li::before{
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -13px;
+    top: 1em;
+    position: absolute;
+}
+.resourceContent .pdfLink ul li a{
+    color: #007bff !important;
+    padding: 10px 10px 5px !important;
+}
+.resourceContent h2{
+    padding: 5px 5px;
+    margin-top: 10px;
+    background: #201e1f !important;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: RobotoRegular;
+}
+/********** Gallery - CSS **************/
+.galleryContent .galleryImg img{
+    width: 100%;
+}
+.galleryContent .galleryImg{
+    margin-bottom: 20px;
+    background: #000;
+    transition: all .5s;
+}
+.galleryContent .galleryImg:hover{
+    opacity: 1;
+}
+.galleryContent .galleryImg a{
+    position: absolute;
+    left: 43%;
+    top: 36%;
+    font-size: 40px;
+    color: #fff;
+    z-index: 999999;
+    opacity: 0;
+    transition: all .6s;
+}
+.galleryContent .galleryImg:hover a{
+    opacity: 1;
+}
+.galleryContent .tabDiv ul{
+    justify-content: center;
+}
+.galleryContent .tabDiv ul li{
+    margin: 0px !important; 
+}
+.galleryContent .tabDiv ul li{
+    background-color: transparent !important;
+}
+.galleryContent .tabDiv ul li a{
+    background-color: #fff9b6 !important;
+    margin: 0px 10px;
+    color: #000 !important;
+    font-family: RobotoRegular;
+}
+.galleryContent .tabDiv ul li a.active{
+    background-color: #c39a3a !important;
+    color: #fff !important;
+}
+/********** President - CSS **************/
+.presidentContent .infoDiv{
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0px;
+    height: 500px;
+    overflow: scroll;
+}
+.presidentContent .infoDiv p,
+.statisticsEconomyContent .infoDiv p{
+    font-size: 14px;
+    color: #6c757d;   
+    line-height: 1.8;
+    text-align: justify;
+}
+.presidentContent .infoDiv h4{
+    color: #212529;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+/********** Economy - CSS **************/
+.commonStatistic{
+    height: auto !important;
+}
+.commonStatistic .infoDiv{
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.commonStatistic img{
+    width: 100%;
+}
+/********** State - Finance - CSS **************/
+.stateFinanceContent .imgDiv{
+    text-align: center;
+}
+.stateFinanceContent .imgDiv h4{
+    color: #fff;
+    margin: 20px 0px;
+    text-align: left;
+}
+.stateFinanceContent .imgDiv img{
+    width: auto !important;
+}
+/********** Infrastructure - CSS **************/
+.infrastructureContent .infoDiv{
+    height: 500px;
+    overflow: scroll;
+}
+#armyMap .modal-dialog{
+    max-width: 1000px;
+}
+#armyMap .modal-dialog img{
+    width: 100%;
+}
+.startBtn{
+    padding: 20px 80px;
+    border: none;
+    border-radius: 10px;
+    background: #fcd428;
+    cursor: pointer;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.startBtn:hover,
+.startBtn a:hover{
+    color: #000;
+}
+.startBtn a{
+    color: #000;
+}
+/********** Selection - CSS **************/
+.selectionScreenContent h2 span{
+    color: #b23537;
+    font-family: 'Fredoka', sans-serif;
+}
+.selectionScreenContent h2{
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Fredoka', sans-serif;
+    color: #fcd428;
+    letter-spacing: 5px;
+    line-height: 65px;
+    font-weight: 700;
+}
+.selectionScreenContent .commonSelectionDiv{
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #201e1f;
+    border-radius: 10px;
+    margin-top: 80px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    flex-direction: column;
+}
+.learningImg{
+    width: 190px;
+}
+.assessmentImg{
+    width: 120px;
+}
+.selectionScreenContent .commonSelectionDiv:hover{
+    box-shadow: 1px 0px 5px 3px rgba(252,212,40,0.65);
+    transform: scale(1.1);
+}
+.selectionScreenContent .commonSelectionDiv h5{
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 35px;
+    letter-spacing: 2px;
+}
+/********** Assessment - CSS **************/
+.assessmentContent .infoDiv{
+    margin-top: 40px;
+}
+.assessmentContent .infoDiv p{
+    color: #fff;
+    font-family: RobotoRegular;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+#sf2,#sf3{
+    display: none;
+}
+/********** Quiz Content - CSS **************/
+.questionText{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 25px;
+}
+.timerDiv span,
+.backBtn{
+    padding: 8px 50px;
+    background: #fcd428;
+    border-radius: 10px;
+    font-weight: 400;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.backBtn:hover{
+    color: #000;
+}
+.timerDiv p{
+    color: #fff;
+    font-size: 20px;
+    padding: 0px 35px;
+    margin-top: 10px;
+}
+.formDiv{
+    background-color: #fff;
+    padding: 10px 0px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.quizFinish{
+    display: none;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+.quizFinish img{
+    width: 10%;
+}
+.quizFinish p{
+    color: #b23537;
+    font-size: 22px;
+    font-weight: 500;
+}
+.commonDiv{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+.commonDiv .quizImg{
+    position: absolute;
+    right: 7px;
+}
+.commonDiv .quizImg img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    
+}
+.commonDiv label{
+    margin: 0px 0px 0px 10px;
+}
+.fomrDiv .commonLabel{
+    font-size: 25px;
+}
+.backBtnDiv{
+    display: none;
+}
+.form-group button{
+    width: 100px;
+    background-color: #201e1f;
+    color: #fff;
+    border: none;
+}
+
+/********** Indian Army - Western Command - CSS **************/
+#contentDiv .contentDiv #map{
+    text-align: center;
+}
+#contentDiv .contentDiv #map img{
+    width: 50%;
+}
+#contentDiv .contentDiv .detailHistoryDiv{
+    padding: 5px 20px;
+    background-color: #fff;
+    height: 450px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+#contentDiv .contentDiv .detailHistoryDiv ul{
+    list-style: disc;
+    padding: 0px 20px;
+}
+#contentDiv .contentDiv .detailHistoryDiv ul li{
+    background-color: transparent;
+    text-align: left;
+}
+#contentDiv .contentDiv .detailHistoryDiv h5{
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********** Hammad CSS ***************/
+#palicanbanner{
+    height: 74vh;
+    text-align: center;
+    vertical-align: middle;
+   
+}
+#palicanbanner img{
+    width: 100%;
+}
+#palicanbanner .sliderDiv{
+    position: relative;
+}
+#palicanbanner .sliderDiv h5{
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    font-size: 80px;
+    color: #fcd428;
+    z-index: 9999;
+    font-family: 'Fredoka One', cursive;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #00000063;
+    position: absolute;
+    top: 0px;
+}
+#palicanbanner h1{
+    font-weight: 700;
+    color: #fcd428;
+    letter-spacing: 4px;
+    font-size: 58px;
+    z-index: 99999;
+    position: relative;
+}
+
+/* indian army section */
+
+#indian-army{
+    height: 100%;
+    width: 100%;
+    background-color: #595859;
+}
+.commonView{
+    height: 100%;
+}
+.commonView .tabDiv ul li a{
+    width: 184px;
+    color: white;
+    border-radius: 0px 30px 0px 0px;
+    padding: 10px 42px;
+    margin-bottom: 30px;
+    min-height: 38px;
+    margin-bottom: 20px;
+    display: list-item;
+    background-color: #000;
+}
+
+.commonView .tabDiv ul li a.active{
+    background-color: #b23537;
+}
+.commonView .chief-name-div {
+    border-radius: 0px 0px 20px 23px;
+    color: white;
+    background-color: #212121;
+    text-align: center;
+    padding-bottom: 7px;
+}
+.commonView .chief-name-div h3{
+    margin-top: 10px;
+    font-size: 22px;
+}
+.commonView .chief-name-div h5{
+    font-size: 18px;
+}
+.commonView .chief-name-div h4{
+    font-size: 14px;
+}
+.commonView .logos-main-Div .logoCommands .logoDiv{
+    text-align: center;
+    margin: auto;
+    width: 25%;
+    margin: 0px 1px;
+    background-color: #cecece;
+}
+
+
+
+.commonView .ind-arm-text-div{
+    padding: 20px 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.commonView .ind-arm-cmd{
+    text-align: center;
+
+}
+.commonView .ind-arm-cmd img{
+    margin-top: 25px;
+
+}
+.commonView .command-text-div {
+    color: black;
+    background-color: #000;
+    color: white;
+    border: 2px solid black;
+    height: 30px;
+}
+.commonView .command-text-div h6{
+    margin-top: 3px;
+}
+
+.commonView .logos-main-Div{
+    padding: 30px 0px;
+}
+.commonView .logos-main-Div h2{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background: #3a401e;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.commonView .logos-main-Div a img {
+    height: -7%;
+    height: 77px;
+    margin: 6px 0px 0px;
+
+}
+.commonView .first{
+    display: flex;
+    width: 95%;
+    justify-content: center;
+}
+.commonView .second{
+    display: flex;
+    width: 95%;
+    margin-top: 12px;
+    justify-content: center;
+}
+.commonView .second .logoDiv{
+    width: 30%;
+    margin: 0px 1px;
+    background-color: #cecece;
+    margin-top: 16px;
+    
+}
+ .logos-main-Div .logoCommands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+ .logos-main-Div .logoCommands .logoDiv{
+    text-align: center;
+    margin: auto;
+}
+ .logos-main-Div .logoCommands .logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+}
+
+
+/* Chief */
+
+.strip {
+    background-color: burlywood;
+    height: 14px;
+    width: 100%;
+}
+/* indian army section ended */
+
+
+/* Indian Air Force */
+
+
+
+
+/*  air force section */
+
+#air-force{
+    width: 100%;
+    background-color: #595859;
+}
+.air-force-cont{
+   
+}
+
+.air-force-history{
+    background-color: #419a41;
+}
+.air-p {
+    margin-left: 25px;
+    color: white;
+    border-radius: 0px 30px 0px 0px;
+    padding: 7px 0px;
+    margin-bottom: 30px;
+
+}
+.air-p p{
+    margin-left: 20px;
+}
+.air-organztn{
+    background-color: black;
+}
+.air-document{
+    background-color: black;
+}
+.air-med-lib{
+    background-color: black;
+}
+.air-resourc{
+    background-color: black;
+}
+
+
+.air-force-text-div{
+    padding: 20px 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* commands div */
+
+.air-force-cmd{
+    text-align: center;
+
+}
+.air-force-cmd img{
+    margin-top: 25px;
+
+}
+.command-text-div {
+    color: black;
+    background-color: #000;
+    color: white;
+    border: 2px solid black;
+    height: 30px;
+}
+.command-text-div h6{
+    margin-top: 3px;
+}
+
+
+.air-force-chief img{
+        height: 60%;
+        width: 57%;
+        margin-left: 10px;
+}
+
+ .air-force-logos-main-Div{
+    padding: 30px 0px;
+}
+ .air-force-logos-main-Div h2{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background: #3a401e;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.air-force-logos-main-Div a img {
+    height: -7%;
+    height: 77px;
+    margin: 6px 0px 0px;
+
+}
+ .air-force-first .air-force-logoDiv{
+    width: 21%;
+    margin: 0px 1px;
+    margin: auto;
+    background-color: #cecece;
+}
+.air-force-first{
+    display: flex;
+    width: 95%;
+}
+.air-force-second{
+    display: flex;
+    width: 70%;
+    margin-top: 12px;
+    margin: auto;
+}
+.air-force-second .air-force-first-logoDiv{
+    width: 28%;
+    margin: 0px 1px;
+    background-color: #cecece;
+    margin-top: 16px; 
+    margin-right: 10px;  
+    margin-left: 80px;  
+}
+.air-force-second .air-force-first-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.air-force-second .air-force-second-logoDiv{
+    width: 28%;
+    margin: 0px 1px;
+    background-color: #cecece;
+    margin-top: 16px; 
+    margin-left: 18px;
+}
+.air-force-second .air-force-second-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+  .logoCommands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+ .air-force-logoDiv{
+    text-align: center;
+    margin: auto;
+}
+  .air-force-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+/* Chief */
+.air-chief-name-div {
+    width: 61%;
+    border-radius: 0px 0px 20px 23px;
+    color: white;
+    background-color: #212121;
+    text-align: center;
+    padding-bottom: 7px;
+}
+.air-strip {
+    background-color: burlywood;
+    height: 14px;
+    width: 100%;
+}
+
+/* Air force section ended */
+
+
+/* Navy section */
+
+/*  air force section */
+
+#navy{
+    width: 100%;
+    background-color: #595859;
+}
+.navy-cont{
+   
+}
+
+.navy-history{
+    background-color: #419a41;
+}
+.air-p {
+    margin-left: 25px;
+    color: white;
+    border-radius: 0px 30px 0px 0px;
+    padding: 7px 0px;
+    margin-bottom: 30px;
+
+}
+.air-p p{
+    margin-left: 20px;
+}
+.air-organztn{
+    background-color: black;
+}
+.air-document{
+    background-color: black;
+}
+.air-med-lib{
+    background-color: black;
+}
+.air-resourc{
+    background-color: black;
+}
+
+
+.navy-text-div{
+    padding: 20px 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* commands div */
+
+.navy-cmd{
+    text-align: center;
+
+}
+.navy-cmd img{
+    margin-top: 25px;
+
+}
+.command-text-div {
+    color: black;
+    background-color: #000;
+    color: white;
+    border: 2px solid black;
+    height: 30px;
+}
+.command-text-div h6{
+    margin-top: 3px;
+}
+
+
+.navy-chief img{
+        height: 60%;
+        width: 57%;
+        margin-left: 10px;
+}
+
+ .navy-logos-main-Div{
+    padding: 30px 0px;
+}
+ .navy-logos-main-Div h2{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background: #3a401e;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navy-logos-main-Div a img {
+    height: -7%;
+    height: 77px;
+    margin: 6px 0px 0px;
+
+}
+ .navy-first .navy-logoDiv{
+    width: 21%;
+    margin: 0px 1px;
+    margin: auto;
+    background-color: #cecece;
+}
+.navy-first{
+    display: flex;
+    width: 95%;
+}
+.navy-second{
+    display: flex;
+    width: 70%;
+    margin-top: 12px;
+    margin: auto;
+}
+.navy-second .navy-first-logoDiv{
+    width: 28%;
+    margin: 0px 1px;
+    background-color: #cecece;
+    margin-top: 16px; 
+    margin-right: 10px;  
+    margin-left: 80px;  
+}
+.navy-second .navy-first-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+}
+.navy-second .navy-second-logoDiv{
+    width: 28%;
+    margin: 0px 1px;
+    background-color: #cecece;
+    margin-top: 16px; 
+    margin-left: 18px;
+}
+.navy-second .navy-second-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+}
+  .logoCommands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+ .navy-logoDiv{
+    text-align: center;
+    margin: auto;
+}
+  .navy-logoDiv p{
+    background: #3a401e;
+    color: #fff;
+    padding: 3px;
+    font-size: 12px;
+}
+
+
+/* Chief */
+.air-chief-name-div {
+    width: 61%;
+    border-radius: 0px 0px 20px 23px;
+    color: white;
+    background-color: #212121;
+    text-align: center;
+    padding-bottom: 7px;
+}
+.air-strip {
+    background-color: burlywood;
+    height: 14px;
+    width: 100%;
+}
+
+
+
+
+
+
+/* Navy section ended */
+
+
+.galleryContent .galleryImg img{
+    width: 100%;
+}
+.galleryContent .galleryImg{
+    margin-bottom: 20px;
+    background: #000;
+    transition: all .5s;
+}
+.galleryContent .galleryImg:hover{
+    opacity: 1;
+}
+.galleryContent .galleryImg a{
+    position: absolute;
+    left: 43%;
+    top: 36%;
+    font-size: 40px;
+    color: #fff;
+    z-index: 999999;
+    opacity: 0;
+    transition: all .6s;
+}
+.galleryContent .galleryImg:hover a{
+    opacity: 1;
+}
+.galleryContent .tabDiv ul{
+    justify-content: center;
+}
+.galleryContent .tabDiv ul li{
+    margin: 0px !important; 
+}
+.galleryContent .tabDiv ul li{
+    background-color: transparent !important;
+}
+.galleryContent .tabDiv ul li a{
+    background-color: #fff9b6 !important;
+    margin: 0px 10px;
+    color: #000 !important;
+    font-family: RobotoRegular;
+}
+.galleryContent .tabDiv ul li a.active{
+    background-color: #c39a3a !important;
+    color: #fff !important;
+}
+#videos video{
+    margin-bottom: 20px;
+}
+
+.indianPortal .tabDiv ul li a{
+    width: 230px;
+    padding: 10px 15px;
+}
+.indianPortal .tabContentDiv .tabDiv ul{
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-wrap: initial;
+}
+.indianPortal .tabContentDiv .tabDiv ul li a{
+    width: auto;
+    background-color: transparent;
+    padding: 10px 0px;
+    font-size: 14px;
+    text-align: center;
+    min-height: auto;
+    margin-bottom: 10px;
+}
+.indianPortal .tabContentDiv .tabDiv ul li a.active{
+    color: #fff;
+}
+.indianPortal .tabContentDiv .tab-pane {
+    padding: 10px 20px;
+    overflow: hidden;
+}
+.indianPortal .tabContentDiv .tab-pane .tab-pane{
+    padding: 0px;
+}
+.indianPortal .tabContentDiv .tab-pane .tab-pane .detailHistoryDiv{
+    background-color: #fff;
+    padding: 5px;
+}
+.indianPortal .tabContentDiv .tab-pane .tab-pane .detailHistoryDiv h5{
+    margin: 10px 0px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+.indianPortal .tabContentDiv .tab-pane .tab-pane ul{
+    list-style: disc;
+    padding-left: 20px;
+}
+#component .tabDiv,
+#southcomponent .tabDiv,
+#southcommandcomponent .tabDiv,
+#easterncomponent .tabDiv,
+#centralcomponent .tabDiv,
+#roles .tabDiv{
+    padding: 0px;
+}
+#component .tabDiv ul,
+#southcomponent .tabDiv ul,
+#southcommandcomponent .tabDiv ul,
+#easterncomponent .tabDiv ul,
+#centralcomponent .tabDiv ul,
+#roles .tabDiv ul{
+    list-style: none;
+    padding: 0px;
+}
+.contentDiv .tab-content .contentDiv{
+    padding: 0px;
+}
+.contentDiv .tab-content .contentDiv .tab-pane{
+    padding: 20px 0px;
+}
+.indianPortal .armyPortalContent .armyChiefDiv p{
+    font-size: 9px;
+}
+.indianPortal .tabContentDiv .logoCommands{
+    padding: 25px 0px;
+}
+.indianPortal .tabContentDiv .logoCommands .logoDiv{
+    text-align: center;
+}
+.indianPortal .tabContentDiv .logoCommands .logoDiv p,
+.badgePara{
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+}
+.indianPortal .tabContentDiv .multiLogoDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.multiLogoDiv .logoDiv {
+    width: 48%;
+    margin-top: 20px;
+}
+/************ Indian Air Force - CSS *********/
+.indianAirCommand .marqueeDiv  h5{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #000;
+    color: #fff;
+    padding: 10px 3px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.organogarmBox{
+    background: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    min-height: 150px !important;
+    margin-bottom: 30px;
+}
+.armyChiefContent li{
+    background-color: transparent !important;
+    text-align: left !important;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 999999;
+}

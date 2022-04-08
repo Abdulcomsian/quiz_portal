@@ -17,29 +17,13 @@ class quizController extends Controller
         // $quizzes = Quiz::inRandomOrder()->get(); 
         $user_id = Auth::id();
         $quizzes = Quiz::get(); 
-        return view('quiz.index', compact('quizzes'));
+        return view('quiz.index_1', compact('quizzes'));
         
     } 
 
     public function store_quiz(Request $request)
     {
         $user_id = Auth::id();
-          // dd($request->all());
-
-        // $answers = array()
-        $this->validate($request,[ 
-            'option_1'=>'required', 
-            'option_2'=>'required', 
-            'option_3'=>'required', 
-            'option_4'=>'required', 
-            'option_5'=>'required', 
-            'option_6'=>'required', 
-            'option_7'=>'required', 
-            'option_8'=>'required', 
-            'option_9'=>'required', 
-            'option_10'=>'required', 
-        ]);
-
         $questions = [];
         $answers = [];
         $c_answers = [];
@@ -47,10 +31,11 @@ class quizController extends Controller
           $j = 0;
           $results=0;
         $total_question = count($request->question);
+
         for($i=1; $i<= count($request->question); $i++)
         {
           
-            $questions['question_'.$i.''] =$request->question[$j];
+            $questions['question_'.$i.''] =$request->questions[$j];
             $answers['option_'.$i.''] =$request->input('option_'.$i);
             $c_answer = Quiz::FindorFail(($request->question[$j]));
             $c_answer =  $c_answer->answer;
@@ -69,7 +54,6 @@ class quizController extends Controller
         $result->user_id = $user_id;
 
         $result->result = $results;
-        // dd($result);
         $result->save();
 
         return view('quiz.result', compact('results','total_question')); 
@@ -78,7 +62,13 @@ class quizController extends Controller
     public function q_result()
     {
         $user_id = Auth::id();
-        $results = Result::where('user_id',$user_id)->get();
+        $results = Result::where('user_id',$user_id)->paginate(20);
         return view('quiz.results', compact('results')); 
+    }
+
+    public function q_review($id){
+        $user_id = Auth::id();
+        $results = Result::where(['id'=>$id,'user_id'=> $user_id])->first();
+        return view('quiz.review', compact('results','id'));
     }
 }
