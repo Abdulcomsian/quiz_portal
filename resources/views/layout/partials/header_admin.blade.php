@@ -6,10 +6,10 @@
 		
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="/" class="logo">
+				<a href="/demo/screens/assessment/public" class="logo">
 					<img src="http://127.0.0.1:8000/assets/img/leftLogo.png" class="img-fluid" style="height: 44px !important;" alt="Logo">
 				</a>
-				<a href="/" class="logo logo-small">
+				<a href="/demo/screens/assessment/public" class="logo logo-small">
 					<img src="http://127.0.0.1:8000/assets/img/leftLogo.png" class="img-fluid" style="height: 44px !important;" alt="Logo">
 				</a>
 			</div>
