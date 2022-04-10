@@ -51,7 +51,7 @@
 					                            <div class="form-group">
 					                                <label>Phone</label>
 					                                <div>
-					                                    <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $user->phone }}" required autocomplete="phone">
+					                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $user->phone }}" required autocomplete="phone">
 
 						                                @error('phone')
 						                                    <span class="invalid-feedback" role="alert">
