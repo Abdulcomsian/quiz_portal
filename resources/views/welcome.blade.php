@@ -70,7 +70,7 @@
                      @auth
                      <a href="{{ url('user/quiz') }}"> <button style="margin-top: 250px;" class="startBtn">Start Quiz</button></a>
                      @else
-                      <a href="{{ route('login') }}"><button style="margin-top: 250px;" class="startBtn">Login to Start Quiz</button></a>
+                      <a href="{{ url('user/quiz') }}"><button style="margin-top: 250px;" class="startBtn">Login to Start Quiz</button></a>
                      @endif
                 </div>
             </div>

@@ -23,6 +23,7 @@ Users
                 <div class="card">
                     <div class="card-body">
                      Total Attemp Quize {{$totalquizes}}
+                     <a href="{{url('user/quiz')}}" class="btn btn-primary btn-lg" style="float: right;">Start Quiz</a>
                     </div>
                 </div>
             </div>          

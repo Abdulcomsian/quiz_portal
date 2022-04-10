@@ -39,6 +39,12 @@
 							@endif
 							@if(Auth::user()->hasRole('User'))
 							<li class="menu-title"> 
+								<span><i class="fe fe-home"></i> Main</span>
+							</li>
+							<li class="{{ Request::is('user/dashboard') ? 'active' : '' }}"> 
+								<a href="{{ url('user/dashboard') }}"><span>Dashboard</span></a>
+							</li>
+							<li class="menu-title"> 
 								<span><i class="fe fe-home"></i> Result</span>
 							</li>
 							<li class="{{ Request::is('user/q_result') ? 'active' : '' }}"> 
