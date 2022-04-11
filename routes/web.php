@@ -20,6 +20,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('welcome');
 });
+Route::get('/quiz_type', function () {
+    return view('quiz_type');
+});
+Route::get('/interactive_quiz', function () {
+    return view('quiz/interactive_quiz');
+});
 
 Auth::routes();
 

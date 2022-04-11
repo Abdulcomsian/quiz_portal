@@ -24,7 +24,6 @@
         </div>
     </div>
   </section>
-
 <section id="contentDiv" class="selectionScreenContent assessmentContent">
   <div class="overlay"></div>
     <div class="container-fluid">

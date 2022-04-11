@@ -63,19 +63,32 @@
             </div>
         </div>
     </section>
-    <section id="contentDiv">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                     @auth
-                     <a href="{{ url('quiz_type') }}"> <button style="margin-top: 250px;" class="startBtn">Start Quiz</button></a>
-                     @else
-                      <a href="{{ url('user/quiz') }}"><button style="margin-top: 250px;" class="startBtn">Login to Start Quiz</button></a>
-                     @endif
-                </div>
+    <section id="contentDiv" class="selectionScreenContent">
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2><span>Welcome to</span><br> Hizbullah Threat Cell</h2>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ url('user/quiz') }}">
+                    <div class="commonSelectionDiv">
+                        <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
+                        <h5>Who is who & What is what</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ url('interactive_quiz') }}">
+                    <div class="commonSelectionDiv">
+                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
+                        <h5>Interactive <br> Quiz</h5>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     @endsection
     <!-- </body>
 </html>
