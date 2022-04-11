@@ -35,11 +35,15 @@
                         <span class="changeText">1</span>
                         <span>of</span>
                         <span class="totalQuestion">{{count($quizzes)}}</span>
+
+                        <input type="hidden" name="min" class="min" value="{{$min}}">
+                        <input type="hidden" name="sec" class="sec" value="{{$sec}}">
+                        
                     </p>
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="timerDiv">
-                        <span class="countdown">09:55</span>
+                        <span class="countdown">{{$min}}:{{$sec}}</span>
                         <p>TIME LEFT</p>
                     </div>
                     
@@ -48,6 +52,7 @@
         </div>
         <div class="col-12 text-right backBtnDiv">
            <a href="./index.html" class="backBtn">Back</a>
+
         </div>
         <div class="formDiv">
             <form name="basicform" id="basicform" method="post" action="{{ route('test.store') }}">
@@ -140,8 +145,9 @@
          $("input[name='option_"+quizid+"']").prop('checked', false);
          //$('#option_'+quizid).prop('checked', false);
     })
-
-      var timer2 = "09:55";
+      var min = $(".min").val();
+      var sec = $(".sec").val();
+      var timer2 = min + ":" + sec;
       var interval = setInterval(function() {
           var timer = timer2.split(':');
           var minutes = parseInt(timer[0], 10);

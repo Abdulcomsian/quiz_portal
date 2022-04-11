@@ -71,7 +71,7 @@
                 <h2><span>Welcome to</span><br> Hizbullah Threat Cell</h2>
             </div>
             <div class="col-md-6">
-                <a href="{{ url('user/quiz') }}">
+                <a href="{{ url('user/select-number-of-question') }}">
                     <div class="commonSelectionDiv">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
                         <h5>Who is who & What is what</h5>

@@ -23,6 +23,7 @@ Route::get('/home', function () {
 Route::get('/quiz_type', function () {
     return view('quiz_type');
 });
+   
 Route::get('/interactive_quiz', function () {
     return view('quiz/interactive_quiz');
 });
@@ -41,6 +42,8 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 /*****************ADMIN ROUTES*******************/
 Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\user\dashboardController::class, 'index'])->name('user.dashboard');
+    Route::get('/select-number-of-question', [App\Http\Controllers\quizController::class, 'question_select'])->name('select-number-of-question');
+    Route::post('/store_number', [App\Http\Controllers\quizController::class, 'index'])->name('user.store_number');
     Route::get('/quiz', [App\Http\Controllers\quizController::class, 'index'])->name('quiz');
     Route::post('/test', [App\Http\Controllers\quizController::class, 'store_quiz'])->name('test.store');
     Route::get('/q_result', [App\Http\Controllers\quizController::class, 'q_result']);
