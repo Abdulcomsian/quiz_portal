@@ -12,14 +12,52 @@ use Auth;
 
 class quizController extends Controller
 {
-    public function index()
+    public function question_select()
     {
-        // $quizzes = Quiz::inRandomOrder()->get(); 
-        $user_id = Auth::id();
         $quizzes = Quiz::get(); 
-        return view('quiz.index_1', compact('quizzes'));
+        $chk = count($quizzes);
+        $chk = $chk / 20 ;
+
+        return view('quiz.question_select', compact('quizzes','chk'));
         
     } 
+
+    public function index(Request $request)
+    {
+        // dd($request->all());
+        $this->validate($request,[ 
+            'number'=>'required', 
+        ]);
+        if($request->number == 'all')
+        {
+            $quizzes = Quiz::get();
+        }
+        else
+        {
+            $quizzes = Quiz::take($request->number)->get();
+        }
+        $count_time = count($quizzes);
+        $time = $count_time/2;
+        if($count_time%2==0)
+        {
+            // $quizzes = Quiz::inRandomOrder()->get(); 
+            $user_id = Auth::id();
+            $min = $time;
+            $sec = '00';
+            return view('quiz.index_1', compact('quizzes','min','sec'));
+        }
+        else
+        {
+            // $quizzes = Quiz::inRandomOrder()->get(); 
+            $user_id = Auth::id();
+            $min = (int)$time;
+            $sec = '30';
+            return view('quiz.index_1', compact('quizzes','min','sec'));
+        }
+        // $time = $time * 20;
+        
+        
+    }   
 
     public function store_quiz(Request $request)
     {
