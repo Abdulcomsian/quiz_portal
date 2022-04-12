@@ -74,12 +74,12 @@
                 <a href="{{ url('user/select-number-of-question') }}">
                     <div class="commonSelectionDiv">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
-                        <h5>Who is who & What is what</h5>
+                        <h5>Who is who & Questionaire</h5>
                     </div>
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="{{ url('interactive_quiz') }}">
+                <a href="{{ url('user/select-category') }}">
                     <div class="commonSelectionDiv">
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
                         <h5>Interactive <br> Quiz</h5>

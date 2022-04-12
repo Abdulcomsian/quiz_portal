@@ -59,6 +59,8 @@
                 @csrf
                 <div id="sf1" class="frm">
                     <fieldset>
+                        <input type="hidden" name="quiz_type" value="{{$quiz_type}}">  
+                        <input type="hidden" name="category_id" value="{{$category_id}}">  
                         <span class="text-danger error" style="margin-left:17px"></span>
                         @foreach($quizzes as $key=>$quiz)
                          <input type="hidden" name="question[]" value="{{$quiz->id}}">

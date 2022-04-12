@@ -22,6 +22,10 @@
 								</ul>
 							</li>
 
+							<li class="{{ Request::is('admin/category') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/category') }}"><span>Category</span></a>
+							</li>
+
 							<li class="submenu"> 
 								<a href="#"><span>Quiz Questons</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">

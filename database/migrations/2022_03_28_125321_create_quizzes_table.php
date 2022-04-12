@@ -21,6 +21,10 @@ class CreateQuizzesTable extends Migration
             $table->string('option_2');
             $table->string('option_3');
             $table->string('option_4');
+
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            
             $table->timestamps();
         });
     }
