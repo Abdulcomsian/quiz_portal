@@ -21,6 +21,10 @@ class CreateResultsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->longText('questions');
+
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->string('quiz_type')->nullable();
             $table->timestamps();
         });
     }

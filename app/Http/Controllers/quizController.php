@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Quiz;
 use App\Models\Result;
+use App\Models\Category;
 use Auth;
 
 class quizController extends Controller
@@ -20,7 +21,18 @@ class quizController extends Controller
 
         return view('quiz.question_select', compact('quizzes','chk'));
         
-    } 
+    }   
+
+    public function category_select()
+    {
+        $quizzes = Quiz::get(); 
+        $categories = Category::get();
+        $chk = count($quizzes);
+        $chk = $chk / 20 ;
+
+        return view('quiz.state_select', compact('categories','quizzes','chk'));
+        
+    }
 
     public function index(Request $request)
     {
@@ -28,7 +40,14 @@ class quizController extends Controller
         $this->validate($request,[ 
             'number'=>'required', 
         ]);
-        if($request->number == 'all')
+        $quiz_type = $request->quiz_type;
+        $category_id = $request->category;
+        if($request->category)
+        {
+            $quizzes = Quiz::where('category_id', $request->category)->get();
+            // dd($quizzes);
+        }
+        else if($request->number == 'all')
         {
             $quizzes = Quiz::get();
         }
@@ -44,7 +63,7 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = $time;
             $sec = '00';
-            return view('quiz.index_1', compact('quizzes','min','sec'));
+            return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
         }
         else
         {
@@ -52,7 +71,7 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = (int)$time;
             $sec = '30';
-            return view('quiz.index_1', compact('quizzes','min','sec'));
+            return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
         }
         // $time = $time * 20;
         
@@ -92,6 +111,8 @@ class quizController extends Controller
         $result->user_id = $user_id;
 
         $result->result = $results;
+        $result->quiz_type = $request->quiz_type;
+        $result->category_id = $request->category_id;
         $result->save();
 
         return view('quiz.result', compact('results','total_question')); 

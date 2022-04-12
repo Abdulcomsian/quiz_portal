@@ -99,6 +99,18 @@
 					                                    </span>
 					                                @enderror
 					                            </div>
+
+					                            <div class="form-group">
+											                <label for="category">Category</label>
+											                <select name="category_id" class="form-control" >
+											                <option selected disabled>Select Category</option>
+															@if($categories)
+															@foreach($categories as $all)
+																<option value="{{$all->id}}">{{$all->name}}</option>
+															@endforeach
+															@endif
+											                </select>
+											            </div>
 					                            
 					                            <div class="m-t-20 text-center">
 					                                <button class="btn btn-primary btn-lg">Create Question</button>

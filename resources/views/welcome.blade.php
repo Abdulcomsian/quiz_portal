@@ -68,9 +68,9 @@
             <div class="row">
                 <div class="col-12 text-center">
                      @auth
-                     <a href="{{ url('quiz_type') }}"> <button style="margin-top: 250px;" class="startBtn">Start Quiz</button></a>
+                     <a href="{{ url('user/quiz_type') }}"> <button style="margin-top: 250px;" class="startBtn">Start Quiz</button></a>
                      @else
-                      <a href="{{ url('quiz_type') }}"><button style="margin-top: 250px;" class="startBtn">Login to Start Quiz</button></a>
+                      <a href="{{ url('user/quiz_type') }}"><button style="margin-top: 250px;" class="startBtn">Login to Start Quiz</button></a>
                      @endif
                 </div>
             </div>

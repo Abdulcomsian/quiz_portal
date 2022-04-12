@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Quiz;
+use App\Models\Category;
 use Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -25,7 +26,8 @@ class QuizController extends Controller
 
     public function create()
     {
-        return view('admin.quiz.add');
+        $categories = Category::get();
+        return view('admin.quiz.add',compact('categories'));
     }
 
     public function show($id)
@@ -36,6 +38,7 @@ class QuizController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[ 
+            'category_id'=>'required', 
             'question'=>'required', 
             'answer'=>'required', 
             'option_1'=>'required', 
@@ -51,6 +54,7 @@ class QuizController extends Controller
             $quiz->option_2 = $request->option_2;
             $quiz->option_3 = $request->option_3;
             $quiz->option_4 = $request->option_4;
+            $quiz->category_id = $request->category_id;
             $quiz->save();
             toastSuccess('Successfully Added');
             return redirect('admin/quiz');

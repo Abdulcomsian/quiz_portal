@@ -41,9 +41,20 @@
                     <fieldset>
                         <span class="text-danger error" style="margin-left:17px"></span>
                         <div class="form-group">
-                          <label class="col-lg-12" for="uname"><strong>Select Number of question</strong></label>
+                          <label class="col-lg-12" for="uname"><strong>Select Quiz from State of Category</strong></label>
                           <div class="col-lg-12">
-                            <input type="hidden" name="quiz_type" value="normal quiz">
+                            <input type="hidden" name="quiz_type" value="interactive quiz">
+                            <input type="hidden" name="number" value="all">
+                            <select name="category" id="category" class="form-control">
+                                <option disabled selected>Select State/Category</option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}" >{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                            <div style="color:red;">{{$errors->first('category')}}</div> <br>
+                          </div>
+
+                          <!-- <div class="col-lg-12">
                             <select name="number" id="number" class="form-control">
                                 <option disabled selected>Select Number</option>
                                 @if($chk < 1)
@@ -77,7 +88,7 @@
                                 <option value="all" >All</option>
                             </select>
                             <div style="color:red;">{{$errors->first('number')}}</div> <br>
-                          </div>
+                          </div> -->
                         </div>
                         
                     </fieldset>
