@@ -126,10 +126,10 @@
                           </div>
                           <div class="row" style="padding-bottom: 20px;">
                             <div class="col-lg-6">
-                                <img src="{{ URL::to('/question/image/'.$quiz->image) }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
+                                <img src="{{ asset('question/image/'.$quiz->image ?? '') }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
                             </div>
                             <div class="col-lg-6 text-center">
-                                <img src="{{ URL::to('/question/m_image/'.$quiz->m_image) }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
+                                <img src="{{ asset('question/m_image/'.$quiz->m_image ?? '') }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
                             </div>
                           </div>
 

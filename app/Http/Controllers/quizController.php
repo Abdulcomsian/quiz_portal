@@ -61,7 +61,7 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = $time;
             $sec = '00';
-            if(is_null($quizzes))
+            if(count($quizzes) > 0)
             {
                 return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
 
@@ -79,7 +79,7 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = (int)$time;
             $sec = '30';
-            if(is_null($quizzes))
+            if(count($quizzes) > 0)
             {
                 return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
             }
