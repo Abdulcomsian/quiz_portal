@@ -29,6 +29,8 @@
 													<th>Option 4</th>
 													<th>Answer</th>
 													<th>Category</th>
+													<th>Image</th>
+													<th>Map Image</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -42,6 +44,8 @@
 													<td>{{$quiz->option_4}}</td>
 													<td>{{$quiz->answer}}</td>
 													<td>{{$quiz->category->name}}</td>
+													<td><img src="{{ URL::to('/question/image/'.$quiz->image) }}" width="100" height="80" /></td>
+													<td><img src="{{ URL::to('/question/m_image/'.$quiz->m_image) }}" width="100" height="80" /></td>
 													<td>
 														<div class="actions" style="display:flex;">
 															

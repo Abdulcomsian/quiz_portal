@@ -22,7 +22,7 @@
 									<!-- Add details -->
 									<div class="row">
 										<div class="col-12 blog-details">
-											<form method="POST" action="{{ route('quiz.update',$quiz->id) }}">
+											<form method="POST" action="{{ route('quiz.update',$quiz->id) }}" enctype="multipart/form-data">
 											@method('PUT')
                         					@csrf
 					                            <div class="form-group">
@@ -101,6 +101,32 @@
 					                                    </span>
 					                                @enderror
 					                            </div>
+
+					                            <div class="form-group">
+											                <label for="category">Category</label>
+											                <select name="category_id" class="form-control" >
+											                <option disabled>Select Category</option>
+															@if($categories)
+															@foreach($categories as $all)
+																<option value="{{$all->id}}" {{ $quiz->category_id == $all->id ? 'selected' : '' }} >{{$all->name}}</option>
+															@endforeach
+															@endif
+											                </select>
+											            </div>
+														<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>Upload Image</label>
+															<input id="image" type="file" name="image" autocomplete="image" class="form-control"> 
+														</div>
+													</div>
+													<div class="col-md-6">
+													<div class="form-group">
+														<label>Map Image</label>
+					                                    <input id="m_image" type="file" name="m_image" autocomplete="m_image" class="form-control">
+</div>
+													</div>
+												</div>
 					                            
 					                            <div class="m-t-20 text-center">
 					                                <button class="btn btn-primary btn-lg">Update Question</button>
