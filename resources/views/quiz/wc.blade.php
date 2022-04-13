@@ -74,28 +74,40 @@
         <div class="row">
             
             <div class="col-md-4">
-                <a href="#">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="CLS">
                     <div class="commonSelectionDiv" style="max-width:100%">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
-                        <h5>CIS</h5>
+                        <button type="submit" style="background: none; border:none; "><h5>CIS</h5></button>
                     </div>
-                </a>
+                </form>
             </div>
             <div class="col-md-4">
-                <a href="#">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Trans Frontier">
                     <div class="commonSelectionDiv"  style="max-width:100%">
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Trans Frontier</h5>
+                        <button type="submit" style="background: none; border:none; "><h5>Trans Frontier</h5></button>
                     </div>
-                </a>
+                </form>
             </div>
             <div class="col-md-4">
-                <a href="#">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Militry">
                     <div class="commonSelectionDiv"  style="max-width:100%">>
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>MIL</h5>
+                        <button type="submit" style="background: none; border:none; "><h5>MIL</h5></button>
                     </div>
-                </a>
+                </form>
             </div>
            
            

@@ -129,7 +129,7 @@
                                 <img src="{{ URL::to('/question/image/'.$quiz->image) }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
                             </div>
                             <div class="col-lg-6 text-center">
-                                <img src="{{ URL::to('/question/image/'.$quiz->m_image) }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
+                                <img src="{{ URL::to('/question/m_image/'.$quiz->m_image) }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
                             </div>
                           </div>
 

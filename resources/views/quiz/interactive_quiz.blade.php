@@ -73,89 +73,68 @@
         <div class="row">
             
             <div class="col-md-4">
-                <a href="#">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Geography">
                     <div class="commonSelectionDiv" style="max-width:100%">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
-                        <h5>Geography</h5>
+                        <button type="submit" style="background: none; border:none; "><h5>Geography</h5></button>
                     </div>
-                </a>
+                </form>
             </div>
             <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Topography</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Demography</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Rivers</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Topography">
                     <div class="commonSelectionDiv"  style="max-width:100%">
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Land</h5>
+                        <button type="submit" style="background: none; border:none; "><h5>Topography</h5></button>
                     </div>
-                </a>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Demography">
+                    <div class="commonSelectionDiv"  style="max-width:100%">
+                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
+                        <button type="submit" style="background: none; border:none; "><h5>Demography</h5></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Rivers">
+                    <div class="commonSelectionDiv"  style="max-width:100%">
+                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
+                        <button type="submit" style="background: none; border:none; "><h5>Rivers</h5></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
+                @csrf
+                    <input type="hidden" name="quiz_type" value="interactive quiz">
+                    <input type="hidden" name="number" value="all">
+                    <input type="hidden" name="category" value="Land">
+                    <div class="commonSelectionDiv"  style="max-width:100%">
+                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
+                        <button type="submit" style="background: none; border:none; "><h5>Land</h5></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 @endsection
 @section('script')
-<script type="text/javascript">
-
-    $(".next").on('click',function(){
-        var quizid=$(this).attr('data-order');
-        if(  $("input[name='option_"+quizid+"']").is(":checked"))
-        {
-             $('.quiz'+quizid).addClass('d-none');
-             var nextquizid=parseInt(quizid)+(1);
-             $(".changeText").text(nextquizid);
-             $('.quiz'+nextquizid).removeClass('d-none');
-             $(".error").html("");
-        }
-        else{
-             $(".error").html("Please Select Answer");   
-             return false;
-        }
-    })
-
-    $(".clearBtn").click(function(){
-         var quizid=$(this).attr('data-order');
-         $("input[name='option_"+quizid+"']").prop('checked', false);
-         //$('#option_'+quizid).prop('checked', false);
-    })
-
-      var timer2 = "09:55";
-      var interval = setInterval(function() {
-          var timer = timer2.split(':');
-          var minutes = parseInt(timer[0], 10);
-          var seconds = parseInt(timer[1], 10);
-          --seconds;
-          minutes = (seconds < 0) ? --minutes : minutes;
-          if (minutes < 0){
-            $("#basicform").submit();
-            return false;
-          }
-          seconds = (seconds < 0) ? 59 : seconds;
-          seconds = (seconds < 10) ? '0' + seconds : seconds;
-          $('.countdown').html(minutes + ':' + seconds);
-          timer2 = minutes + ':' + seconds;
-        }, 1000);
-</script>
 @endsection

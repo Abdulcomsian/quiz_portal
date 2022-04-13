@@ -20,7 +20,7 @@ class quizController extends Controller
         $chk = count($quizzes);
         $chk = $chk / 20 ;
 
-        return view('quiz.question_select', compact('quizzes','chk'));
+        return view('quiz.question_select', compact('quizzes','chk','category'));
         
     }   
 
@@ -42,15 +42,12 @@ class quizController extends Controller
             'number'=>'required', 
         ]);
         $quiz_type = $request->quiz_type;
-        $category_id = $request->category;
-        if($request->category && $request->category != 1)
+        $category = Category::where('name',$request->category)->first();
+        $category_id = $category->id;
+        if($request->category)
         {
-            $quizzes = Quiz::where('category_id', $request->category)->get();
+            $quizzes = Quiz::where('category_id', $category_id)->get();
             // dd($quizzes);
-        }
-        else if($request->number == 'all')
-        {
-            $quizzes = Quiz::get();
         }
         else
         {
