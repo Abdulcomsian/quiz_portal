@@ -76,31 +76,7 @@
                 <a href="#">
                     <div class="commonSelectionDiv" style="max-width:100%">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
-                        <h5>Geography</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Topography</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Demography</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Rivers</h5>
+                        <h5>CIS</h5>
                     </div>
                 </a>
             </div>
@@ -108,10 +84,20 @@
                 <a href="#">
                     <div class="commonSelectionDiv"  style="max-width:100%">
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <h5>Land</h5>
+                        <h5>Trans Frontier</h5>
                     </div>
                 </a>
             </div>
+            <div class="col-md-4">
+                <a href="#">
+                    <div class="commonSelectionDiv"  style="max-width:100%">>
+                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
+                        <h5>MIL</h5>
+                    </div>
+                </a>
+            </div>
+           
+           
         </div>
     </div>
 </section>

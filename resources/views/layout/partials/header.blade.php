@@ -76,7 +76,7 @@
 						</li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="login">Login</a>
+                            <a style="background: #fff;border-radius: 11px;" class="nav-link" href="login">Login</a>
                         </li>
                         @endif
 						<!-- /User Menu -->

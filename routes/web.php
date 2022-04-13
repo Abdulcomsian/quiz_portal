@@ -25,6 +25,9 @@ Route::get('/home', function () {
 Route::get('/interactive_quiz', function () {
     return view('quiz/interactive_quiz');
 });
+Route::get('/wc', function () {
+    return view('quiz/wc');
+});
 
 Auth::routes();
 
