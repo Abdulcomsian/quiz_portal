@@ -26,7 +26,8 @@ class QuizController extends Controller
 
     public function create()
     {
-        $categories = Category::get();
+        $exceptThisUserIds = [1];
+        $categories = Category::whereNotIn('id', $exceptThisUserIds)->get();
         return view('admin.quiz.add',compact('categories'));
     }
 
