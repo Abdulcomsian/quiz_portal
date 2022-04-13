@@ -65,31 +65,31 @@
                         @foreach($quizzes as $key=>$quiz)
                          <input type="hidden" name="question[]" value="{{$quiz->id}}">
                          <input type="hidden" name="questions[]" value="{{$quiz->question}}">
-                        <div class="form-group @if(!$loop->first) d-none @endif quiz{{$quiz->id}}">
+                        <div class="form-group @if(!$loop->first) d-none @endif quiz{{$loop->index+1}}">
                           <label class="col-lg-12 control-label commonLabel" for="uname"><b>({{$loop->index+1}})</b>  {{ $quiz->question }}</label>
                           <div class="col-lg-12">
                             <div class="commonDiv">
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}">
+                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}">
                                         <label class="form-check-label" for="{{$quiz->option_1}}">
                                            {{$quiz->option_1}} 
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
                                         <label class="form-check-label" for="option_2">
                                             {{$quiz->option_2}}
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
                                         <label class="form-check-label" for="option_3">
                                             {{$quiz->option_3}}
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$quiz->id}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
+                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
                                         <label class="form-check-label" for="option_4">
                                             {{$quiz->option_4}}
                                         </label>
@@ -106,10 +106,10 @@
                               <div class="form-group">
                               <div class="col-lg-12 text-center">
                                 <!-- open1 is given in the class that is binded with the click event -->
-                                <button class="btn clearBtn" data-order="{{$quiz->id}}" type="button">Clear</button> 
+                                <button class="btn clearBtn" data-order="{{$loop->index+1}}" type="button">Clear</button> 
                                 <button class="btn finishBtn" type="submit">Finish</button> 
                                 @if(!$loop->last)
-                                <button class="btn open1 next" data-order="{{$quiz->id}}" type="button">Next</button> 
+                                <button class="btn open1 next" data-order="{{$loop->index+1}}" type="button">Next</button> 
                                 @endif
                               </div>
                             </div>
