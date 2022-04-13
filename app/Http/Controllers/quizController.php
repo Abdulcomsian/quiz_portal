@@ -42,7 +42,7 @@ class quizController extends Controller
         ]);
         $quiz_type = $request->quiz_type;
         $category_id = $request->category;
-        if($request->category)
+        if($request->category && $request->category != 1)
         {
             $quizzes = Quiz::where('category_id', $request->category)->get();
             // dd($quizzes);
