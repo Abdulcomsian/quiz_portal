@@ -44,7 +44,7 @@
                           <label class="col-lg-12" for="uname"><strong>Select Number of question</strong></label>
                           <div class="col-lg-12">
                             <input type="hidden" name="quiz_type" value="normal quiz">
-                            <input type="hidden" name="category" value="1">
+                            <input type="hidden" name="category" value="{{$category->name}}">
                             <select name="number" id="number" class="form-control">
                                 <option disabled selected>Select Number</option>
                                 @if($chk < 1)
