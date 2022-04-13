@@ -21,8 +21,9 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="/demo/screens/assessment/public" class="navbar-brand logo">
-							<img src="{{asset('assets/img/leftLogo.png') }}" class="img-fluid" style="height: 44px !important;" alt="Logo">
+						<a href="../../user/index.blade.php" class="navbar-brand logo">
+							<!-- <img src="{{asset('assets/img/leftLogo.png') }}" class="img-fluid" style="height: 44px !important;" alt="Logo"> -->
+							<i class="fa fa-arrow-left"></i> Back to Home
 						</a>
 					</div>
 					<div class="main-menu-wrapper">

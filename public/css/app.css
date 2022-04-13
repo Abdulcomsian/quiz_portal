@@ -2304,6 +2304,10 @@ textarea.form-control {
   position: relative;
   display: block;
   padding-left: 1.25rem;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .form-check-input {

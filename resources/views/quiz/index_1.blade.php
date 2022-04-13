@@ -4,6 +4,27 @@
     #contentDiv{
         height: 70vh
     }
+    .form-check {
+	position: relative;
+	display: block;
+	padding-left: 1.25rem;
+	background-color: #fff;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+  }
+  .form-check .form-check-input{
+      left: 30px
+  }
+  .questionLabel{
+      font-size: 22px;
+      font-family: "Poppins",sans-serif;
+      font-weight: 500;
+      color: #b33337;
+  }
+  #contentDiv{
+      height: 100vh;
+  }
   </style>
   <section id="banner">
     <div class="container-fluid">
@@ -66,34 +87,62 @@
                          <input type="hidden" name="question[]" value="{{$quiz->id}}">
                          <input type="hidden" name="questions[]" value="{{$quiz->question}}">
                         <div class="form-group @if(!$loop->first) d-none @endif quiz{{$loop->index+1}}">
-                          <label class="col-lg-12 control-label commonLabel" for="uname"><b>({{$loop->index+1}})</b>  {{ $quiz->question }}</label>
+                          <label class="col-lg-12 control-label commonLabel questionLabel" for="uname"><b>({{$loop->index+1}})</b>  {{ $quiz->question }}</label>
                           <div class="col-lg-12">
                             <div class="commonDiv">
                                 <div class="card-body">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}">
-                                        <label class="form-check-label" for="{{$quiz->option_1}}">
-                                           {{$quiz->option_1}} 
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="row">
+                                            <div class="col-lg-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_1}}">
+                                                <label class="form-check-label" for="{{$quiz->option_1}}">
+                                                {{$quiz->option_1}} 
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
+                                                <label class="form-check-label" for="option_2">
+                                                    {{$quiz->option_2}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
+                                                <label class="form-check-label" for="option_3">
+                                                    {{$quiz->option_3}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
+                                                <label class="form-check-label" for="option_4">
+                                                    {{$quiz->option_4}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-lg-3">
+                                                <img src="{{asset('assets/img/map-of-pakistan-with-embedded-flag-on-planet-surface-3d-illustration-H870CH.jpeg')}}" alt="" class="img-fluid">
+                                            </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{$quiz->option_2 }}">
-                                        <label class="form-check-label" for="option_2">
-                                            {{$quiz->option_2}}
-                                        </label>
+                                    <div class="mapImage">
+                                        <div class="row">
+                                            <div class="col-lg-12 text-center">
+                                                <img src="{{asset('assets/img/map.gif')}}" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_3 }}">
-                                        <label class="form-check-label" for="option_3">
-                                            {{$quiz->option_3}}
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="option_{{$loop->index+1}}" id="option_{{$quiz->id}}" value="{{ $quiz->option_4 }}">
-                                        <label class="form-check-label" for="option_4">
-                                            {{$quiz->option_4}}
-                                        </label>
-                                    </div>
+                                  
+                                   
+                                    
 
                                 </div>
                                 <!-- <input type="radio" id="option_{{$key + 1}}" name="option_{{$key + 1}}"value="{{$quiz->option_1}}">

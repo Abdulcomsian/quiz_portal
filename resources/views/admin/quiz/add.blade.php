@@ -88,6 +88,16 @@
 					                                    </div>
 					                                </div>
 					                            </div>
+												<div class="row">
+													<div class="col-md-6">
+														<label>Upload Image</label>
+					                                    <input id="upload_Img" type="file" name="upload_Img" required autocomplete="upload_Img">
+													</div>
+													<div class="col-md-6">
+														<label>Map Image</label>
+					                                    <input id="map_Img" type="file" name="map_Img" required autocomplete="map_Img">
+													</div>
+												</div>
 
 					                            <div class="form-group">
 					                                <label>Answer</label>
