@@ -653,7 +653,7 @@ font-size: 38px;
     margin-top: 10px;
 }
 .formDiv{
-    background-color: #fff;
+    background-color: #00000040;
     padding: 10px 0px;
     border-radius: 8px;
     margin-top: 30px;
@@ -675,10 +675,27 @@ font-size: 38px;
     font-size: 22px;
     font-weight: 500;
 }
+.header-nav{
+    background-color: #000;
+    border: none;
+}
+.mapImage img{
+    width: 150px;
+}
+.navbar-brand,
+.navbar-brand:hover {
+    font-family: "Poppins",sans-serif;
+    font-size: 16px;
+    color: #fcd428;
+    font-weight: 500;
+
+}
+.card-body{
+    padding: 30px 0px;
+}
 .commonDiv{
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid;
     display: flex;
     align-items: center;
     margin-bottom: 15px;
@@ -695,7 +712,7 @@ font-size: 38px;
     
 }
 .commonDiv label{
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 30px;
 }
 .fomrDiv .commonLabel{
     font-size: 25px;
