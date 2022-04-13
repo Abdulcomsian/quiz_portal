@@ -1615,6 +1615,7 @@ body
 .header-navbar-rht > li > a {
 	font-size: 15px;
 	font-weight: 500;
+	color: #fcd428;
 }
 .header-navbar-rht li .dropdown-menu {
 	border: 0;
