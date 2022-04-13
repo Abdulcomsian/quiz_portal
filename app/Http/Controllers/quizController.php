@@ -47,7 +47,7 @@ class quizController extends Controller
         if($request->category)
         {
             $quizzes = Quiz::where('category_id', $category_id)->get();
-            // dd($quizzes);
+            
         }
         else
         {
@@ -61,7 +61,17 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = $time;
             $sec = '00';
-            return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
+            if(is_null($quizzes))
+            {
+                return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
+
+            }
+            else
+            {
+                toastError('No Question Found');
+                return Redirect::back();
+            }
+            
         }
         else
         {
@@ -69,7 +79,15 @@ class quizController extends Controller
             $user_id = Auth::id();
             $min = (int)$time;
             $sec = '30';
-            return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
+            if(is_null($quizzes))
+            {
+                return view('quiz.index_1', compact('quizzes','min','sec','quiz_type','category_id'));
+            }
+            else
+            {
+                toastError('No Question Found');
+                return Redirect::back();
+            }
         }
         // $time = $time * 20;
         
@@ -138,6 +156,6 @@ class quizController extends Controller
     } 
 
     public function remain_command(){
-        return view('quiz.review');
+        return view('quiz.remaining_command');
     } 
 }

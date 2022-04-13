@@ -23,3 +23,6 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6adZVdzTvBpE2yBRK8cDfsss8QXChK0I"></script>
 		<script src="{{asset('assets/js/map.js') }}"></script>
 		@endif
+
+		@toastr_js
+		@toastr_render	

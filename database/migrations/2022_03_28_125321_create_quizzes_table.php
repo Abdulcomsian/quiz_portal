@@ -21,8 +21,8 @@ class CreateQuizzesTable extends Migration
             $table->string('option_2');
             $table->string('option_3');
             $table->string('option_4');
-            $table->longText('image');
-            $table->longText('m_image');
+            $table->longText('image')->nullable();
+            $table->longText('m_image')->nullable();
 
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');

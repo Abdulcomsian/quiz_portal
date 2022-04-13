@@ -43,11 +43,11 @@
                                     <a class="nav-link" href="{{url('user/over_view')}}">Overview <span
                                             class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{url('user/wc')}}">WC <span
                                             class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="{{url('user/remain-commands')}}">Remaining Comds</a>
                                 </li>
                                
@@ -78,34 +78,10 @@
                 @csrf
                     <input type="hidden" name="quiz_type" value="interactive quiz">
                     <input type="hidden" name="number" value="all">
-                    <input type="hidden" name="category" value="CLS">
+                    <input type="hidden" name="category" value="Remaining Commands">
                     <div class="commonSelectionDiv" style="max-width:100%">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
-                        <button type="submit" style="background: none; border:none; "><h5>CIS</h5></button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
-                @csrf
-                    <input type="hidden" name="quiz_type" value="interactive quiz">
-                    <input type="hidden" name="number" value="all">
-                    <input type="hidden" name="category" value="Trans Frontier">
-                    <div class="commonSelectionDiv"  style="max-width:100%">
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <button type="submit" style="background: none; border:none; "><h5>Trans Frontier</h5></button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <form name="basicform" id="basicform" method="post" action="{{ route('user.store_number') }}">
-                @csrf
-                    <input type="hidden" name="quiz_type" value="interactive quiz">
-                    <input type="hidden" name="number" value="all">
-                    <input type="hidden" name="category" value="Militry">
-                    <div class="commonSelectionDiv"  style="max-width:100%">>
-                        <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
-                        <button type="submit" style="background: none; border:none; "><h5>MIL</h5></button>
+                        <button type="submit" style="background: none; border:none; "><h5>Remaining Commands</h5></button>
                     </div>
                 </form>
             </div>
