@@ -71,7 +71,7 @@
                 <h2><span>Welcome to</span><br> Hizbullah Threat Cell</h2>
             </div>
             <div class="col-md-6">
-                <a href="{{ url('user/select-number-of-question') }}">
+                <a href="{{ url('user/select-number-of-question',['name'=>'GA']) }}">
                     <div class="commonSelectionDiv">
                         <img src="../assets/images/learningPortal.png" alt="" class="img-fluid learningImg">
                         <h5>GA</h5>
@@ -79,7 +79,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="{{ url('user/select-category') }}">
+                <a href="{{ url('user/over_view') }}">
                     <div class="commonSelectionDiv">
                         <img src="../assets/images/assessmentPortal.png" alt="" class="img-fluid assessmentImg">
                         <h5>Interactive <br> Quiz</h5>

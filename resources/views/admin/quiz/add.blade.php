@@ -22,7 +22,7 @@
 									<!-- Add details -->
 									<div class="row">
 										<div class="col-12 blog-details">
-											<form method="POST" action="{{ route('quiz.store') }}">
+											<form method="POST" action="{{ route('quiz.store') }}" enctype="multipart/form-data">
                         					@csrf
 					                            <div class="form-group">
 					                                <label>Question</label>
@@ -116,13 +116,13 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label>Upload Image</label>
-															<input id="upload_Img" type="file" name="upload_Img" required autocomplete="upload_Img" class="form-control"> 
+															<input id="image" type="file" name="image" required autocomplete="image" class="form-control"> 
 														</div>
 													</div>
 													<div class="col-md-6">
 													<div class="form-group">
 														<label>Map Image</label>
-					                                    <input id="map_Img" type="file" name="map_Img" required autocomplete="map_Img" class="form-control">
+					                                    <input id="m_image" type="file" name="m_image" required autocomplete="m_image" class="form-control">
 </div>
 													</div>
 												</div>

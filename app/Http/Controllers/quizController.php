@@ -13,9 +13,10 @@ use Auth;
 
 class quizController extends Controller
 {
-    public function question_select()
+    public function question_select($cat_id)
     {
-        $quizzes = Quiz::get(); 
+        $category = Category::where('name',$cat_id)->first();
+        $quizzes = Quiz::where('category_id',$category->id)->get(); 
         $chk = count($quizzes);
         $chk = $chk / 20 ;
 
@@ -129,5 +130,17 @@ class quizController extends Controller
         $user_id = Auth::id();
         $results = Result::where(['id'=>$id,'user_id'=> $user_id])->first();
         return view('quiz.review', compact('results','id'));
-    }
+    }   
+
+    public function over_view(){
+        return view('quiz.interactive_quiz');
+    } 
+
+    public function wc(){
+        return view('quiz.wc');
+    } 
+
+    public function remain_command(){
+        return view('quiz.review');
+    } 
 }

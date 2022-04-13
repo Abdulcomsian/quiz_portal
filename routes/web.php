@@ -22,12 +22,7 @@ Route::get('/home', function () {
 });
 
    
-Route::get('/interactive_quiz', function () {
-    return view('quiz/interactive_quiz');
-});
-Route::get('/wc', function () {
-    return view('quiz/wc');
-});
+
 
 Auth::routes();
 
@@ -44,7 +39,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 /*****************ADMIN ROUTES*******************/
 Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\user\dashboardController::class, 'index'])->name('user.dashboard');
-    Route::get('/select-number-of-question', [App\Http\Controllers\quizController::class, 'question_select'])->name('select-number-of-question');
+    Route::get('/select-number-of-question/{cat_id}', [App\Http\Controllers\quizController::class, 'question_select'])->name('select-number-of-question');
     Route::get('/select-category', [App\Http\Controllers\quizController::class, 'category_select'])->name('select-category');
     Route::post('/store_number', [App\Http\Controllers\quizController::class, 'index'])->name('user.store_number');
     Route::get('/quiz', [App\Http\Controllers\quizController::class, 'index'])->name('quiz');
@@ -52,6 +47,9 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/q_result', [App\Http\Controllers\quizController::class, 'q_result']);
     Route::get('/q_review/{id}', [App\Http\Controllers\quizController::class, 'q_review'])->name('quiz.review');
     Route::get('/quiz_type', function () { return view('quiz_type'); });
+    Route::get('/over_view', [App\Http\Controllers\quizController::class, 'over_view']);
+    Route::get('/wc', [App\Http\Controllers\quizController::class, 'wc']);
+    Route::get('/remain-commands', [App\Http\Controllers\quizController::class, 'remain_command']);
 });
 
 
