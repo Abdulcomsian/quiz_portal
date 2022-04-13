@@ -47,7 +47,7 @@
                                     <a class="nav-link" href="{{url('user/wc')}}">WC</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Remaining Comds</a>
+                                    <a class="nav-link" href="{{url('user/remain-commands')}}">Remaining Comds</a>
                                 </li>
                                
                             </ul>

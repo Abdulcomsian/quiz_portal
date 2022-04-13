@@ -45,8 +45,6 @@ class QuizController extends Controller
             'option_2'=>'required',
             'option_3'=>'required',
             'option_4'=>'required',
-            'image'=>'required',
-            'm_image'=>'required',
         ]);
         try {
             $quiz= new Quiz;
