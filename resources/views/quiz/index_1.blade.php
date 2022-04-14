@@ -160,7 +160,9 @@
                                 @endif
                             </div>
                             <div class="col-lg-6 text-center">
+                                @if($quiz->m_image != null)
                                 <img src="{{ asset('question/m_image/'.$quiz->m_image ?? '') }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
+                                @endif
                             </div>
                           </div>
 
