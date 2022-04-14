@@ -49,6 +49,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('user/remain-commands')}}">Remaining Comds</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('user/course')}}">LESSON</a>
+                                </li>
                                
                             </ul>
                         </div>

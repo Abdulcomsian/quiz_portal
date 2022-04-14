@@ -10,6 +10,19 @@
 							<li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}"> 
 								<a href="{{ url('admin/dashboard') }}"><span>Dashboard</span></a>
 							</li>
+
+							<li class="menu-title"> 
+								<span><i class="fe fe-document"></i> Course</span>
+							</li>
+							<li class="{{ Request::is('admin/course') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/course') }}"><span>Manage Course</span></a>
+							</li>
+							<li class="{{ Request::is('admin/course-category') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/course-category') }}"><span>Manage Course Category</span></a>
+							</li>
+							<li class="{{ Request::is('admin/course-lesson') ? 'active' : '' }}"> 
+								<a href="{{ url('admin/course-lesson') }}"><span>Manage Course Lessons</span></a>
+							</li>
 							
 							<li class="menu-title"> 
 								<span><i class="fe fe-document"></i> Pages</span>
