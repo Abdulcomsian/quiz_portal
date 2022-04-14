@@ -31,6 +31,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\admin\dashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('/user', 'App\Http\Controllers\admin\UserController');
     Route::resource('/category', 'App\Http\Controllers\CategoryController');
+    Route::resource('/course', 'App\Http\Controllers\admin\CourseController');
+    Route::resource('/course-category', 'App\Http\Controllers\admin\CourseCategoryController');
+    Route::resource('/course-lesson', 'App\Http\Controllers\admin\LessonController');
     Route::resource('/quiz', 'App\Http\Controllers\admin\QuizController');
     Route::post('/user_status/{id}', [App\Http\Controllers\admin\UserController::class, 'update_status'])->name('user-status');
     Route::get('/quiz_result', [App\Http\Controllers\admin\UserController::class, 'quiz_result'])->name('admin.quiz_result');
@@ -49,6 +52,8 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
     Route::get('/quiz_type', function () { return view('quiz_type'); });
     Route::get('/over_view', [App\Http\Controllers\quizController::class, 'over_view']);
     Route::get('/wc', [App\Http\Controllers\quizController::class, 'wc']);
+    Route::get('/course', [App\Http\Controllers\quizController::class, 'course']);
+    Route::get('/course-category/{id}', [App\Http\Controllers\quizController::class, 'course_category']);
     Route::get('/remain-commands', [App\Http\Controllers\quizController::class, 'remain_command']);
 });
 

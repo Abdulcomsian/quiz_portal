@@ -1,4 +1,5 @@
 @extends('layout.mainlayout_admin')
+@include('layouts.sweetalert.sweetalert_css')
 @section('content')	
 <!-- Page Wrapper -->
 <div class="page-wrapper">

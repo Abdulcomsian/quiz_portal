@@ -9,6 +9,9 @@ use App\Models\User;
 use App\Models\Quiz;
 use App\Models\Result;
 use App\Models\Category;
+use App\Models\Lesson;  
+use App\Models\CourseCategory;  
+use App\Models\Course;  
 use Auth;
 
 class quizController extends Controller
@@ -158,4 +161,17 @@ class quizController extends Controller
     public function remain_command(){
         return view('quiz.remaining_command');
     } 
+
+    public function course(){
+        $courses = Course::get();
+        return view('quiz.course',compact('courses'));
+    }   
+
+    public function course_category($course_slug){
+        $course = Course::where('course_slug',$course_slug)->first();
+        $lessons = Lesson::where('course_id',$course->id)->get();
+        return view('quiz.course_category',compact('lessons','course'));
+    }
+
+    
 }
