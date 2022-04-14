@@ -1,4 +1,5 @@
 @extends('layout.mainlayout_admin')
+@include('layouts.sweetalert.sweetalert_css')
 @section('content')	
 <!-- Page Wrapper -->
 <div class="page-wrapper">
@@ -76,4 +77,8 @@
 				</div>			
 			</div>
 			<!-- /Main Wrapper -->	
+@endsection
+
+@section('js')
+@include('layouts.sweetalert.sweetalert_js')
 @endsection
