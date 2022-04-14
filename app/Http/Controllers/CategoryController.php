@@ -74,7 +74,7 @@ class CategoryController extends Controller
         
         } catch (\Exception $exception) {
             // dd($exception->getMessage());
-            toastError($exception->getMessage());
+            toastError("Kindly fill all fields");
             return Redirect::back();
         }
     }

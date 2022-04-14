@@ -49,11 +49,23 @@
 					                                </div>
 					                            </div>
 					                            <div class="form-group">
-					                                <label>Phone</label>
+					                                <label>PA Number</label>
 					                                <div>
-					                                    <input id="" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $user->phone }}" required autocomplete="phone">
+					                                    <input id="" type="text" class="form-control @error('pa_num') is-invalid @enderror" name="pa_num" placeholder="Enter PA Number" value="{{ $user->pa_num }}" required autocomplete="pa_num">
 
-						                                @error('phone')
+						                                @error('pa_num')
+						                                    <span class="invalid-feedback" role="alert">
+						                                        <strong>{{ $message }}</strong>
+						                                    </span>
+						                                @enderror
+					                                </div>
+					                            </div>
+					                            <div class="form-group">
+					                                <label>Unit</label>
+					                                <div>
+					                                    <input id="" type="text" class="form-control @error('unit') is-invalid @enderror" name="unit" value="{{ $user->unit }}" placeholder="Enter Unit" required autocomplete="unit">
+
+						                                @error('unit')
 						                                    <span class="invalid-feedback" role="alert">
 						                                        <strong>{{ $message }}</strong>
 						                                    </span>

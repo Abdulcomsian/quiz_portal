@@ -67,9 +67,9 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center">
+            <!-- <div class="col-12 text-center">
                 <h2><span>Welcome to</span><br> Hizbullah Threat Cell</h2>
-            </div>
+            </div> -->
             <div class="col-md-6">
                 <a href="{{ url('user/select-number-of-question',['name'=>'GA']) }}">
                     <div class="commonSelectionDiv">

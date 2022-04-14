@@ -22,7 +22,7 @@ Users
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                     Total Attemp Quize {{$totalquizes}}
+                     Total Attemp Quiz {{$totalquizes}}
                      <a href="{{url('user/quiz_type')}}" class="btn btn-primary btn-lg" style="float: right;">Start Quiz</a>
                     </div>
                 </div>

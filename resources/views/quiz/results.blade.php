@@ -28,6 +28,9 @@
                                                     <th>Total Questions</th>
                                                     <th>Correct Answers</th>
                                                     <th>Obtain Marks</th>
+                                                    <th>Percentage</th>
+													<th>Category</th>
+													<th>Quiz Time</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -38,6 +41,9 @@
                                                     <td>{{count($result->questions)}}</td>
                                                     <td>{{$result->result}}</td>
                                                     <td>{{$result->result}}</td>
+                                                    <td>{{($result->result) / (count($result->questions)) * 100}} %</td>
+													<td>{{$result->category->name}}</td>
+													<td>{{ date('Y/m/d h:i A', strtotime($result->created_at)) }}</td>
                                                     <td><a href="{{route('quiz.review',$result->id)}}"><i class="fa fa-eye"></i></a></td>
                                                 </tr>
                                                 @endforeach
