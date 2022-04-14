@@ -45,7 +45,8 @@ class UserController extends Controller
     {
         $this->validate($request,[ 
             'name'=>'required|string|max:255', 
-            'phone'=>'required|min:9|max:16', 
+            'pa_num'=>'required', 
+            'unit'=>'required', 
             'password'=>'required|string|min:8|confirmed', 
             'email'=>'required|string|email|max:255|unique:users',
         ]);
@@ -53,7 +54,8 @@ class UserController extends Controller
         $user= new User;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->phone = $request->phone;
+        $user->pa_num = $request->pa_num;
+        $user->unit = $request->unit;
         $user->status = '1';
         $user->password = Hash::make($request->password);
         $user->save();
@@ -85,7 +87,8 @@ class UserController extends Controller
         {
            $this->validate($request,[ 
                 'name'=>'required|string|max:255', 
-                'phone'=>'required|min:9|max:16', 
+                'pa_num'=>'required',
+                'unit' => 'required', 
                 'password'=>'required|string|min:8|confirmed', 
             ]); 
         }
@@ -94,13 +97,15 @@ class UserController extends Controller
 
             $this->validate($request,[ 
                 'name'=>'required|string|max:255', 
-                'phone'=>'required|min:9|max:16', 
+                'pa_num'=>'required',
+                'unit' => 'required', 
             ]);
         }
         try {
             $user= User::find($request->id);
             $user->name = $request->name;
-            $user->phone = $request->phone;
+            $user->pa_num = $request->pa_num;
+            $user->unit = $request->unit;
             $user->status = '1';
             if($request->password != null)
             {

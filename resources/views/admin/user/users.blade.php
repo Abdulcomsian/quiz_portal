@@ -24,7 +24,8 @@
 												<tr>
 													<th>Name</th>
 													<th>Email</th>
-													<th>Phone</th>
+													<th>PA number</th>
+													<th>Unit</th>
 													<th>Status</th>
 													<th>Action</th>
 												</tr>
@@ -34,7 +35,8 @@
 													@foreach($users as $user)
 													<td>{{$user->name}}</td>
 													<td>{{$user->email}}</td>
-													<td>{{$user->phone}}</td>
+													<td>{{$user->pa_num}}</td>
+													<td>{{$user->unit}}</td>
 													<td>@if($user->status == 0)
 														Inactive
 														@elseif($user->status == 1)
