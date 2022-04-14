@@ -86,21 +86,22 @@
                         @foreach($quizzes as $key=>$quiz)
                          <input type="hidden" name="question[]" value="{{$quiz->id}}">
                          <input type="hidden" name="questions[]" value="{{$quiz->question}}">
-                         <div class="row">
+                            
+                        <div class="form-group @if(!$loop->first) d-none @endif quiz{{$loop->index+1}}">
+                        <div class="row">
                              <div class="col-lg-12 text-right">
                              <div class="form-group">
-                              <div class="col-lg-12 text-right">
-                                <!-- open1 is given in the class that is binded with the click event -->
-                                <button class="btn clearBtn" data-order="{{$loop->index+1}}" type="button">Clear</button> 
-                                <button class="btn finishBtn" type="submit">Finish</button> 
-                                @if(!$loop->last)
-                                <button class="btn open1 next" data-order="{{$loop->index+1}}" type="button">Next</button> 
-                                @endif
-                              </div>
+                                <div class="col-lg-12 text-right">
+                                    <!-- open1 is given in the class that is binded with the click event -->
+                                    <button class="btn clearBtn" data-order="{{$loop->index+1}}" type="button">Clear</button> 
+                                    <button class="btn finishBtn" type="submit">Finish</button> 
+                                    @if(!$loop->last)
+                                    <button class="btn open1 next" data-order="{{$loop->index+1}}" type="button">Next</button> 
+                                    @endif
+                                </div>
                             </div>
                              </div>
                          </div>
-                        <div class="form-group @if(!$loop->first) d-none @endif quiz{{$loop->index+1}}">
                           <label class="col-lg-12 control-label commonLabel" for="uname" style="font-size: 24px; color: #fff;"><b>({{$loop->index+1}})</b>  {{ $quiz->question }}</label>
                           <div class="col-lg-12">
                             <div class="commonDiv">
