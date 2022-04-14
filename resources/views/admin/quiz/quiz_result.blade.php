@@ -26,6 +26,9 @@
 													<th>User Email</th>
 													<th>Obtained Marks</th>
 													<th>Total Marks</th>
+													<th>Percentage</th>
+													<th>Category</th>
+													<th>Quiz Time</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -35,7 +38,11 @@
 													<td>{{$result->user->name}}</td>
 													<td>{{$result->user->email}}</td>
 													<td>{{$result->result}}</td>
-													<td>{{count($questions)}}</td>
+
+													<td>{{count($result->questions)}}</td>
+													<td>{{($result->result) / (count($result->questions)) * 100}} %</td>
+													<td>{{$result->category->name}}</td>
+													<td>{{ date('Y/m/d h:i A', strtotime($result->created_at)) }}</td>
 													<td>
 														<div class="actions" style="display:flex;">
 															
