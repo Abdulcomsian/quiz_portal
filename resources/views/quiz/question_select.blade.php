@@ -41,8 +41,8 @@
                     <fieldset>
                         <span class="text-danger error" style="margin-left:17px"></span>
                         <div class="form-group">
-                          <label class="col-lg-12" for="uname"><strong>Select Number of question</strong></label>
-                          <div class="col-lg-12">
+                          <label class="col-lg-12" for="uname" style="font-size: 24px; color: #fff;"><strong>Select Number of question</strong></label>
+                          <div class="col-lg-4">
                             <input type="hidden" name="quiz_type" value="normal quiz">
                             <input type="hidden" name="category" value="{{$category->name}}">
                             <select name="number" id="number" class="form-control">
