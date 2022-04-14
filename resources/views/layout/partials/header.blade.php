@@ -21,7 +21,7 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="/" class="navbar-brand logo">
+						<a href="../../" class="navbar-brand logo">
 							<!-- <img src="{{asset('assets/img/leftLogo.png') }}" class="img-fluid" style="height: 44px !important;" alt="Logo"> -->
 							<i class="fa fa-arrow-left"></i> Back to Home
 						</a>

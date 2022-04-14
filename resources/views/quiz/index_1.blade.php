@@ -155,7 +155,9 @@
                           </div>
                           <div class="row" style="padding-bottom: 20px;">
                             <div class="col-lg-6 text-center">
+                                @if($quiz->image != null)
                                 <img src="{{ asset('question/image/'.$quiz->image ?? '') }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
+                                @endif
                             </div>
                             <div class="col-lg-6 text-center">
                                 <img src="{{ asset('question/m_image/'.$quiz->m_image ?? '') }}" alt="" class="img-fluid commonImg" style="width:450px; height: 200px;">
