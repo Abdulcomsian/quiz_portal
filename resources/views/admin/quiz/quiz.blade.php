@@ -45,8 +45,17 @@
 													<td>{{$quiz->option_4}}</td>
 													<td>{{$quiz->answer}}</td>
 													<td>{{$quiz->category->name}}</td>
-													<td><img src="{{ URL::to('/question/image/'.$quiz->image) }}" width="100" height="80" /></td>
-													<td><img src="{{ URL::to('/question/m_image/'.$quiz->m_image) }}" width="100" height="80" /></td>
+
+													<td>
+														@if($quiz->image != null)
+														<img src="{{ URL::to('/question/image/'.$quiz->image) }}" width="100" height="80" />
+														@endif
+													</td>
+													<td>
+														@if($quiz->m_image != null)
+														<img src="{{ URL::to('/question/m_image/'.$quiz->m_image) }}" width="100" height="80" />
+														@endif
+													</td>
 													<td>
 														<div class="actions" style="display:flex;">
 															
