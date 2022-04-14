@@ -83,3 +83,6 @@
 			</div>
 			<!-- /Main Wrapper -->	
 @endsection
+@section('js')
+@include('layouts.sweetalert.sweetalert_js')
+@endsection

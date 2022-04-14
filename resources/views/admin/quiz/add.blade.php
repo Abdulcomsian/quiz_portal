@@ -116,13 +116,13 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label>Upload Image</label>
-															<input id="image" type="file" name="image" required autocomplete="image" class="form-control"> 
+															<input id="image" type="file" name="image" autocomplete="image" class="form-control"> 
 														</div>
 													</div>
 													<div class="col-md-6">
 													<div class="form-group">
 														<label>Map Image</label>
-					                                    <input id="m_image" type="file" name="m_image" required autocomplete="m_image" class="form-control">
+					                                    <input id="m_image" type="file" name="m_image" autocomplete="m_image" class="form-control">
 </div>
 													</div>
 												</div>
