@@ -37,6 +37,8 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::resource('/quiz', 'App\Http\Controllers\admin\QuizController');
     Route::post('/user_status/{id}', [App\Http\Controllers\admin\UserController::class, 'update_status'])->name('user-status');
     Route::get('/quiz_result', [App\Http\Controllers\admin\UserController::class, 'quiz_result'])->name('admin.quiz_result');
+
+    Route::get('get_category/{id}', [App\Http\Controllers\quizController::class, 'get_category']);
 });
 
 /*****************ADMIN ROUTES*******************/

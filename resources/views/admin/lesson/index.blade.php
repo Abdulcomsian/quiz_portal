@@ -38,7 +38,7 @@
 													<td>
 														{{ $lesson->name}}
 													</td>
-													<td>{{$lesson->category_id}}</td>
+													<td>{{$lesson->category->name}}</td>
 													<td>{{$lesson->course->name}}</td>
 													<td>{{$lesson->document}}</td>
 
