@@ -13,6 +13,7 @@ use App\Models\Lesson;
 use App\Models\CourseCategory;  
 use App\Models\Course;  
 use Auth;
+use DB;
 
 class quizController extends Controller
 {
@@ -171,6 +172,11 @@ class quizController extends Controller
         $course = Course::where('course_slug',$course_slug)->first();
         $lessons = Lesson::where('course_id',$course->id)->get();
         return view('quiz.course_category',compact('lessons','course'));
+    }
+
+    public function get_category($id){
+        // echo json_encode(DB::table('sub_categories')->where('category_id', $id)->get());
+        echo json_encode(DB::table('course_categories')->where('course_id', $id)->get());
     }
 
     

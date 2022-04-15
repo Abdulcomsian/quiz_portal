@@ -30,20 +30,8 @@
 			                                        <div style="color:red;">{{$errors->first('name')}}</div> <br>
 					                            </div>
 					                            <div class="form-group">
-					                                <label>Lesson Category</label>
-					                                <select name="category_id" class="form-control" >
-										                <option selected disabled>Select Category</option>
-														@if($course_categories)
-														@foreach($course_categories as $category)
-															<option value="{{$category->id}}">{{$category->name}}</option>
-														@endforeach
-														@endif
-										            </select>
-					                                <div style="color:red;">{{$errors->first('category_id')}}</div> <br>
-					                            </div>
-					                            <div class="form-group">
 					                                <label>Select Course</label>
-					                                <select name="course_id" class="form-control" >
+					                                <select name="course_id" id="course_id" class="form-control" >
 										                <option selected disabled>Select Course</option>
 														@if($courses)
 														@foreach($courses as $all)
@@ -52,6 +40,12 @@
 														@endif
 										            </select>
 					                                <div style="color:red;">{{$errors->first('course_id')}}</div> <br>
+					                            </div>
+					                            <div class="form-group">
+					                                <label>Lesson Category</label>
+					                                <select class="form-control required" placeholder="Select Category" name="category_id" id="category_id">
+		                							</select>
+					                                <div style="color:red;">{{$errors->first('category_id')}}</div> <br>
 					                            </div>
 					                            <div class="form-group">
 					                                <label>Lesson Document</label>
@@ -74,4 +68,29 @@
 				</div>			
 			</div>
 			<!-- /Page Wrapper -->
+@endsection
+@section('js')
+<script>
+$(document).ready(function() {
+$('#course_id').on('change', function () {
+    let course_id = $(this).val();
+    $('#category_id').empty();
+    $('#category_id').append(`<option value="0" disabled selected>Processing...</option>`);
+    $.ajax({
+        type: 'GET',
+        url: '{{url("/admin/get_category/")}}' +'/' + course_id,
+        success: function (response) {
+	        var response = JSON.parse(response);
+	        console.log(response);   
+	        $('#category_id').empty();
+	        $('#category_id').append(`<option value="0" disabled selected>Select Sub Category*</option>`);
+	        response.forEach(element => {
+	            $('#category_id').append(`<option value="${element['id']}">${element['name']}</option>`);
+        	});
+		}
+	});
+});
+
+});
+</script>
 @endsection
