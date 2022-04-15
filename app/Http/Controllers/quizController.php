@@ -170,8 +170,9 @@ class quizController extends Controller
 
     public function course_category($course_slug){
         $course = Course::where('course_slug',$course_slug)->first();
-        $lessons = Lesson::where('course_id',$course->id)->get();
-        return view('quiz.course_category',compact('lessons','course'));
+        // $lessons = Lesson::where('course_id',$course->id)->get();
+        $course_categories = CourseCategory::where('course_id',$course->id)->get();
+        return view('quiz.course_category',compact('course_categories','course'));
     }
 
     public function get_category($id){

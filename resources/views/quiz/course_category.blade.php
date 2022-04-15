@@ -1,3 +1,6 @@
+<?php
+    use App\Models\Lesson; 
+?>  
 @extends('layout.mainlayout')
 @section('content')   
   <style type="text/css">
@@ -50,7 +53,7 @@
                                     <a class="nav-link" href="{{url('user/remain-commands')}}">Remaining Comds</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{url('user/lesson')}}">LESSON</a>
+                                    <a class="nav-link" href="{{url('user/course')}}">LESSON</a>
                                 </li>
                             </ul>
                         </div>
@@ -66,7 +69,7 @@
                 <div class="col-12 text-right">
                     <a href="">
                         <span>Home / </span>
-                        <span>Course / </span>
+                        <span>Lesson / </span>
                         <span>{{$course->name}}</span>
                     </a>
                 </div>
@@ -77,16 +80,20 @@
         <div class="overlay"></div>
         <div class="container-fluid">
             <div class="row">
-                @if(isset($lessons))
-                @foreach($lessons as $lesson)
+                @if(isset($course_categories))
+                @foreach($course_categories as $course_category)
+                @php
+                    $lessons = Lesson::where('category_id',$course_category->id)->get();
+                @endphp
                 <div class="col-md-6">
-                    <h2 class="home-title ">{{$lesson->category_id }}</h2>
+                    <h2 class="home-title ">{{$course_category->name }}</h2>
                     <div class="pdfLink">
                         <ul>
+                            @foreach($lessons as $lesson)
                             <li>
-                                <!-- <a href="">www.india.gov.in</a> -->
-                                {{$lesson->document}}
+                                <a href="{{ url('/lesson/document/'.$lesson->document) }}" download> {{$lesson->document}}</a>  
                             </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
